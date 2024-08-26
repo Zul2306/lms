@@ -121,4 +121,24 @@
             $query = $this->db->get_where($table, $data);
             return $query->result();
         }
+
+        public function login($email, $password) {
+            // Periksa kredensial pengguna
+            $this->db->where('email', $email);
+            $this->db->where('password', md5($password)); // Contoh hashing, sesuaikan dengan metode hashing Anda
+            $query = $this->db->get('users');
+        
+            if ($query->num_rows() == 1) {
+                $user = $query->row();
+        
+                // Set session data
+                $this->CI->session->set_userdata('user_email', $user->email);
+                $this->CI->session->set_userdata('usertypeID', $user->usertypeID);
+        
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
+        
     }

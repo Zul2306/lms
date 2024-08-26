@@ -40,7 +40,8 @@ class Mailandsms extends Admin_Controller {
 		$this->load->library("bulk");
 		$this->load->library("msg91");
 		$this->load->library("inilabs",$this->data);
-		
+		$this->load->model('Mailandsms_m');
+        $this->load->library('session');
 		$language = $this->session->userdata('lang');
 		$this->lang->load('mailandsms', $language);
 	}
@@ -181,6 +182,16 @@ class Mailandsms extends Admin_Controller {
 
 	public function index() {
 		$this->data['mailandsmss'] = $this->mailandsms_m->get_mailandsms_with_usertypeID();
+		$this->data["subview"] = "mailandsms/index";
+		$user_email = $this->session->userdata('user_email');
+        $usertypeID = $this->session->userdata('mailandsms'); // Misalkan role disimpan di session
+
+        // Mendapatkan data email sesuai dengan role
+        if ($usertypeID == '1') {
+            $data['mailandsmss'] = $this->Mailandsms_m->get_all_mailandsms();
+        } else {
+            $data['mailandsmss'] = $this->Mailandsms_m->get_filtered_mailandsms($usertypeID);
+        }
 		$this->data["subview"] = "mailandsms/index";
 		$this->load->view('_layout_main', $this->data);
 	}
