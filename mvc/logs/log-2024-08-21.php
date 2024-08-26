@@ -148,3 +148,6 @@ AND `conversation_message_info`.`draft` = 0
 GROUP BY `conversation_message_info`.`id`
 ORDER BY `conversation_message_info`.`id` DESC
 ERROR - 2024-08-21 21:33:43 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-21 21:45:34 --> Could not find the language line "mailandsms_select_tem"
+ERROR - 2024-08-21 22:10:50 --> Could not find the language line "mailandsms_select_tem"
+ERROR - 2024-08-21 22:11:36 --> Severity: Warning --> mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() C:\xampppp\htdocs\lms\main\libraries\Email.php 1902

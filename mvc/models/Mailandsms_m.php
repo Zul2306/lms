@@ -30,6 +30,25 @@ class Mailandsms_m extends MY_Model {
 		return $query;
 	}
 
+	public function get_all_mailandsms() {
+        $query = $this->db->get('mailandsms');
+        return $query->result();
+    }
+
+    public function get_filtered_mailandsms($usertypeID) {
+        // Mendapatkan data untuk email yang dikirim atau diterima
+        $this->db->group_start();
+        $this->db->where('sender_email', $usertypeID);
+        $this->db->or_where('receiver_email', $usertypeID);
+        $this->db->group_end();
+        $query = $this->db->get('mailandsms');
+		if ($query === FALSE) {
+            log_message('error', 'Database query error: ' . $this->db->last_query());
+            return []; // Kembalikan array kosong jika query gagal
+        }
+        return $query->result();
+    }
+
 	function get_single_mailandsms($array=NULL) {
 		$query = parent::get_single($array);
 		return $query;

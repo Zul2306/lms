@@ -174,6 +174,7 @@
                     </span>
                 </div>
 
+
                 <?php
                 if (form_error('email_template'))
                     echo "<div class='form-group has-error' >";
@@ -199,54 +200,72 @@
             </div>
 
             <?php
-            if (form_error('email_type'))
+            if (form_error('email_sender'))
                 echo "<div class='form-group has-error' >";
             else
                 echo "<div class='form-group' >";
             ?>
-            <label for="email_type" class="col-sm-2 control-label">
-                <?= $this->lang->line("mailandsms_type") ?> <span class="text-red">*</span>
+            <label for="email_sender" class="col-sm-2 control-label">
+                <?= $this->lang->line("mailandsms_sender") ?> <span class>Sender</span>
             </label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" id="email_type" name="email_type" value="<?= set_value('email_subject') ?>">
+                <input type="text" class="form-control" id="users" name="users"
+                value="<?= htmlspecialchars($this->session->userdata('users')) ?>" ></value>
             </div>
             <span class="col-sm-4 control-label">
-                <?php echo form_error('email_type'); ?>
+                <?php echo form_error('email_sender'); ?>
             </span>
         </div>
 
         <?php
-        if (form_error('email_subject'))
-            echo "<div class='form-group has-error' id='subject_section' >";
+        if (form_error('email_type'))
+            echo "<div class='form-group has-error' >";
         else
-            echo "<div class='form-group' id='subject_section' >";
+            echo "<div class='form-group' >";
         ?>
-        <label for="email_subject" class="col-sm-2 control-label">
-            <?= $this->lang->line("mailandsms_subject") ?> <span class="text-red">*</span>
+        <label for="email_type" class="col-sm-2 control-label">
+            <?= $this->lang->line("mailandsms_type") ?> <span class="text-red">*</span>
         </label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="email_subject" name="email_subject" value="<?= set_value('email_subject') ?>">
+            <input type="text" class="form-control" id="email_type" name="email_type" value="<?= set_value('email_subject') ?>">
         </div>
         <span class="col-sm-4 control-label">
-            <?php echo form_error('email_subject'); ?>
+            <?php echo form_error('email_type'); ?>
         </span>
     </div>
 
     <?php
-    if (form_error('email_message'))
-        echo "<div class='form-group has-error' >";
+    if (form_error('email_subject'))
+        echo "<div class='form-group has-error' id='subject_section' >";
     else
-        echo "<div class='form-group' >";
+        echo "<div class='form-group' id='subject_section' >";
     ?>
-    <label for="email_message" class="col-sm-2 control-label">
-        <?= $this->lang->line("mailandsms_message") ?> <span class="text-red">*</span>
+    <label for="email_subject" class="col-sm-2 control-label">
+        <?= $this->lang->line("mailandsms_subject") ?> <span class="text-red">*</span>
     </label>
-    <div class="col-sm-10">
-        <textarea class="form-control" id="email_message" name="email_message"><?= set_value('email_message') ?></textarea>
+    <div class="col-sm-6">
+        <input type="text" class="form-control" id="email_subject" name="email_subject" value="<?= set_value('email_subject') ?>">
     </div>
-    <span class="col-xs-12 col-sm-10 col-sm-offset-2 control-label">
-        <?php echo form_error('email_message'); ?>
+    <span class="col-sm-4 control-label">
+        <?php echo form_error('email_subject'); ?>
     </span>
+</div>
+
+<?php
+if (form_error('email_message'))
+    echo "<div class='form-group has-error' >";
+else
+    echo "<div class='form-group' >";
+?>
+<label for="email_message" class="col-sm-2 control-label">
+    <?= $this->lang->line("mailandsms_message") ?> <span class="text-red">*</span>
+</label>
+<div class="col-sm-10">
+    <textarea class="form-control" id="email_message" name="email_message"><?= set_value('email_message') ?></textarea>
+</div>
+<span class="col-xs-12 col-sm-10 col-sm-offset-2 control-label">
+    <?php echo form_error('email_message'); ?>
+</span>
 </div>
 
 <div class="form-group">
