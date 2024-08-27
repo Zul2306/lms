@@ -1,7 +1,8 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Mailandsms extends Admin_Controller {
-/*
+class Mailandsms extends Admin_Controller
+{
+	/*
 | -----------------------------------------------------
 | PRODUCT NAME: 	INILABS SCHOOL MANAGEMENT SYSTEM
 | -----------------------------------------------------
@@ -14,7 +15,8 @@ class Mailandsms extends Admin_Controller {
 | WEBSITE:			http://inilabs.net
 | -----------------------------------------------------
 */
-	function __construct () {
+	function __construct()
+	{
 		parent::__construct();
 		$this->load->model('usertype_m');
 		$this->load->model('systemadmin_m');
@@ -39,14 +41,15 @@ class Mailandsms extends Admin_Controller {
 		$this->load->library("twilio");
 		$this->load->library("bulk");
 		$this->load->library("msg91");
-		$this->load->library("inilabs",$this->data);
+		$this->load->library("inilabs", $this->data);
 		$this->load->model('Mailandsms_m');
-        $this->load->library('session');
+		$this->load->library('session');
 		$language = $this->session->userdata('lang');
 		$this->lang->load('mailandsms', $language);
 	}
-	
-	protected function rules_mail() {
+
+	protected function rules_mail()
+	{
 		$rules = array(
 			array(
 				'field' => 'email_usertypeID',
@@ -87,7 +90,8 @@ class Mailandsms extends Admin_Controller {
 		return $rules;
 	}
 
-	protected function rules_sms() {
+	protected function rules_sms()
+	{
 		$rules = array(
 			array(
 				'field' => 'sms_usertypeID',
@@ -128,7 +132,8 @@ class Mailandsms extends Admin_Controller {
 		return $rules;
 	}
 
-	protected function rules_otheremail() {
+	protected function rules_otheremail()
+	{
 		$rules = array(
 			array(
 				'field' => 'otheremail_name',
@@ -154,7 +159,8 @@ class Mailandsms extends Admin_Controller {
 		return $rules;
 	}
 
-	protected function rules_othersms() {
+	protected function rules_othersms()
+	{
 		$rules = array(
 			array(
 				'field' => 'othersms_name',
@@ -180,23 +186,25 @@ class Mailandsms extends Admin_Controller {
 		return $rules;
 	}
 
-	public function index() {
+	public function index()
+	{
 		$this->data['mailandsmss'] = $this->mailandsms_m->get_mailandsms_with_usertypeID();
 		$this->data["subview"] = "mailandsms/index";
 		$user_email = $this->session->userdata('user_email');
-        $usertypeID = $this->session->userdata('mailandsms'); // Misalkan role disimpan di session
+		$usertypeID = $this->session->userdata('mailandsms'); // Misalkan role disimpan di session
 
-        // Mendapatkan data email sesuai dengan role
-        if ($usertypeID == '1') {
-            $data['mailandsmss'] = $this->Mailandsms_m->get_all_mailandsms();
-        } else {
-            $data['mailandsmss'] = $this->Mailandsms_m->get_filtered_mailandsms($usertypeID);
-        }
+		// Mendapatkan data email sesuai dengan role
+		if ($usertypeID == '1') {
+			$data['mailandsmss'] = $this->Mailandsms_m->get_all_mailandsms();
+		} else {
+			$data['mailandsmss'] = $this->Mailandsms_m->get_filtered_mailandsms($usertypeID);
+		}
 		$this->data["subview"] = "mailandsms/index";
 		$this->load->view('_layout_main', $this->data);
 	}
 
-	public function add() {
+	public function add()
+	{
 		$this->data['headerassets'] = array(
 			'css' => array(
 				'assets/select2/css/select2.css',
@@ -211,19 +219,19 @@ class Mailandsms extends Admin_Controller {
 		$this->data['usertypes'] = $this->usertype_m->get_usertype();
 		$this->data['schoolyears'] = $this->schoolyear_m->get_schoolyear();
 		$this->data['allClasses'] = $this->classes_m->general_get_classes();
-        $this->data['sections'] = [];
-        $classesID = $this->input->post("classesID");
+		$this->data['sections'] = [];
+		$classesID = $this->input->post("classesID");
 
-        if($classesID > 0) {
-            $this->data['sections'] = $this->section_m->get_order_by_section(array("classesID" => $classesID));
-        } else {
-            $this->data['sections'] = [];
-        }
+		if ($classesID > 0) {
+			$this->data['sections'] = $this->section_m->get_order_by_section(array("classesID" => $classesID));
+		} else {
+			$this->data['sections'] = [];
+		}
 
 
-        /* Start For Email */
+		/* Start For Email */
 		$email_usertypeID = $this->input->post("email_usertypeID");
-		if($email_usertypeID && $email_usertypeID != 'select') {
+		if ($email_usertypeID && $email_usertypeID != 'select') {
 			$this->data['email_usertypeID'] = $email_usertypeID;
 		} else {
 			$this->data['email_usertypeID'] = 'select';
@@ -232,16 +240,16 @@ class Mailandsms extends Admin_Controller {
 
 		/* Start For SMS */
 		$sms_usertypeID = $this->input->post("sms_usertypeID");
-		if($sms_usertypeID && $sms_usertypeID != 'select') {
+		if ($sms_usertypeID && $sms_usertypeID != 'select') {
 			$this->data['sms_usertypeID'] = $sms_usertypeID;
 		} else {
 			$this->data['sms_usertypeID'] = 'select';
 		}
 		/* End For SMS */
 
-		if($_POST) {
+		if ($_POST) {
 			$this->data['submittype'] = $this->input->post('type');
-			if($this->input->post('type') == "email") {
+			if ($this->input->post('type') == "email") {
 				$rules = $this->rules_mail();
 				$this->form_validation->set_rules($rules);
 				if ($this->form_validation->run() == FALSE) {
@@ -264,16 +272,16 @@ class Mailandsms extends Admin_Controller {
 					$usertypeID = $this->input->post('email_usertypeID');
 					$schoolyearID = $this->input->post('email_schoolyear');
 
-					if($usertypeID == 1) { /* FOR ADMIN */
+					if ($usertypeID == 1) { /* FOR ADMIN */
 						$systemadminID = $this->input->post('email_users');
-						if($systemadminID == 'select') {
+						if ($systemadminID == 'select') {
 							$message = $this->input->post('email_message');
 							$multisystemadmins = $this->systemadmin_m->get_systemadmin();
-							if(customCompute($multisystemadmins)) {
+							if (customCompute($multisystemadmins)) {
 								$countusers = '';
 								foreach ($multisystemadmins as $key => $multisystemadmin) {
 									$this->userConfigEmail($message, $multisystemadmin, $usertypeID, $schoolyearID);
-									$countusers .= $multisystemadmin->name .' ,';
+									$countusers .= $multisystemadmin->name . ' ,';
 								}
 								$array = array(
 									'usertypeID' => $usertypeID,
@@ -293,7 +301,7 @@ class Mailandsms extends Admin_Controller {
 						} else {
 							$message = $this->input->post('email_message');
 							$singlesystemadmin = $this->systemadmin_m->get_systemadmin($systemadminID);
-							if(customCompute($singlesystemadmin)) {
+							if (customCompute($singlesystemadmin)) {
 								$this->userConfigEmail($message, $singlesystemadmin, $usertypeID);
 								$array = array(
 									'usertypeID' => $usertypeID,
@@ -311,16 +319,16 @@ class Mailandsms extends Admin_Controller {
 								redirect(base_url('mailandsms/add'));
 							}
 						}
-					} elseif($usertypeID == 2) { /* FOR TEACHER */
+					} elseif ($usertypeID == 2) { /* FOR TEACHER */
 						$teacherID = $this->input->post('email_users');
-						if($teacherID == 'select') {
+						if ($teacherID == 'select') {
 							$message = $this->input->post('email_message');
 							$multiteachers = $this->teacher_m->general_get_teacher();
-							if(customCompute($multiteachers)) {
+							if (customCompute($multiteachers)) {
 								$countusers = '';
 								foreach ($multiteachers as $key => $multiteacher) {
 									$this->userConfigEmail($message, $multiteacher, $usertypeID);
-									$countusers .= $multiteacher->name .' ,';
+									$countusers .= $multiteacher->name . ' ,';
 								}
 								$array = array(
 									'usertypeID' => $usertypeID,
@@ -340,7 +348,7 @@ class Mailandsms extends Admin_Controller {
 						} else {
 							$message = $this->input->post('email_message');
 							$singleteacher = $this->teacher_m->general_get_teacher($teacherID);
-							if(customCompute($singleteacher)) {
+							if (customCompute($singleteacher)) {
 								$this->userConfigEmail($message, $singleteacher, $usertypeID);
 								$array = array(
 									'usertypeID' => $usertypeID,
@@ -353,27 +361,26 @@ class Mailandsms extends Admin_Controller {
 								);
 								$this->mailandsms_m->insert_mailandsms($array);
 								redirect(base_url('mailandsms/index'));
-
 							} else {
 								$this->session->set_flashdata('error', $this->lang->line('mailandsms_notfound_error'));
 								redirect(base_url('mailandsms/add'));
 							}
 						}
-					} elseif($usertypeID == 3) { /* FOR STUDENT */
+					} elseif ($usertypeID == 3) { /* FOR STUDENT */
 						$studentID = $this->input->post('email_users');
-						if($studentID == 'select') {
+						if ($studentID == 'select') {
 							$class = $this->input->post('email_class');
-							if($class == 'select') {
+							if ($class == 'select') {
 								/* Multi School Year */
 								$schoolyear = $this->input->post('email_schoolyear');
-								if($schoolyear == 'select') {
+								if ($schoolyear == 'select') {
 									$message = $this->input->post('email_message');
 									$multiSchoolYearStudents = $this->studentrelation_m->general_get_student(TRUE);
-									if(customCompute($multiSchoolYearStudents)) {
+									if (customCompute($multiSchoolYearStudents)) {
 										$countusers = '';
 										foreach ($multiSchoolYearStudents as $key => $multiSchoolYearStudent) {
 											$this->userConfigEmail($message, $multiSchoolYearStudent, $usertypeID, $multiSchoolYearStudent->srschoolyearID);
-											$countusers .= $multiSchoolYearStudent->srname .' ,';
+											$countusers .= $multiSchoolYearStudent->srname . ' ,';
 										}
 										$array = array(
 											'usertypeID' => $usertypeID,
@@ -395,11 +402,11 @@ class Mailandsms extends Admin_Controller {
 									$message = $this->input->post('email_message');
 									$singleSchoolYear = $this->input->post('email_schoolyear');
 									$singleSchoolYearStudents = $this->studentrelation_m->general_get_order_by_student(array('srschoolyearID' => $singleSchoolYear), TRUE);
-									if(customCompute($singleSchoolYearStudents)) {
+									if (customCompute($singleSchoolYearStudents)) {
 										$countusers = '';
 										foreach ($singleSchoolYearStudents as $key => $singleSchoolYearStudent) {
 											$this->userConfigEmail($message, $singleSchoolYearStudent, $usertypeID, $schoolyearID);
-											$countusers .= $singleSchoolYearStudent->srname .' ,';
+											$countusers .= $singleSchoolYearStudent->srname . ' ,';
 										}
 										$array = array(
 											'usertypeID' => $usertypeID,
@@ -422,18 +429,17 @@ class Mailandsms extends Admin_Controller {
 								$message = $this->input->post('email_message');
 								$singleClass = $this->input->post('email_class');
 								$singleSection = $this->input->post('email_section');
-								if((int)$singleSection){
-                                    $singleClassStudents = $this->studentrelation_m->general_get_order_by_student(array('srclassesID' => $singleClass,'srsectionID' => $singleSection, 'srschoolyearID' => $schoolyearID), TRUE);
+								if ((int)$singleSection) {
+									$singleClassStudents = $this->studentrelation_m->general_get_order_by_student(array('srclassesID' => $singleClass, 'srsectionID' => $singleSection, 'srschoolyearID' => $schoolyearID), TRUE);
+								} else {
+									$singleClassStudents = $this->studentrelation_m->general_get_order_by_student(array('srclassesID' => $singleClass, 'srschoolyearID' => $schoolyearID), TRUE);
+								}
 
-                                }else {
-                                    $singleClassStudents = $this->studentrelation_m->general_get_order_by_student(array('srclassesID' => $singleClass, 'srschoolyearID' => $schoolyearID), TRUE);
-                                }
-
-								if(customCompute($singleClassStudents)) {
+								if (customCompute($singleClassStudents)) {
 									$countusers = '';
 									foreach ($singleClassStudents as $key => $singleClassStudent) {
 										$this->userConfigEmail($message, $singleClassStudent, $usertypeID, $schoolyearID);
-										$countusers .= $singleClassStudent->srname .' ,';
+										$countusers .= $singleClassStudent->srname . ' ,';
 									}
 									$array = array(
 										'usertypeID' => $usertypeID,
@@ -455,7 +461,7 @@ class Mailandsms extends Admin_Controller {
 							/* Single Student */
 							$message = $this->input->post('email_message');
 							$singlestudent = $this->studentrelation_m->general_get_single_student(array('srstudentID' => $studentID, 'srschoolyearID' => $schoolyearID), TRUE);
-							if(customCompute($singlestudent)) {
+							if (customCompute($singlestudent)) {
 								$this->userConfigEmail($message, $singlestudent, $usertypeID, $schoolyearID);
 								$array = array(
 									'usertypeID' => $usertypeID,
@@ -474,16 +480,16 @@ class Mailandsms extends Admin_Controller {
 								redirect(base_url('mailandsms/add'));
 							}
 						}
-					} elseif($usertypeID == 4) { /* FOR PARENTS */
+					} elseif ($usertypeID == 4) { /* FOR PARENTS */
 						$parentsID = $this->input->post('email_users');
-						if($parentsID == 'select') {
+						if ($parentsID == 'select') {
 							$message = $this->input->post('email_message');
 							$multiparents = $this->parents_m->get_parents();
-							if(customCompute($multiparents)) {
+							if (customCompute($multiparents)) {
 								$countusers = '';
 								foreach ($multiparents as $key => $multiparent) {
 									$this->userConfigEmail($message, $multiparent, $usertypeID);
-									$countusers .= $multiparent->name .' ,';
+									$countusers .= $multiparent->name . ' ,';
 								}
 								$array = array(
 									'usertypeID' => $usertypeID,
@@ -503,7 +509,7 @@ class Mailandsms extends Admin_Controller {
 						} else {
 							$message = $this->input->post('email_message');
 							$singleparent = $this->parents_m->get_parents($parentsID);
-							if(customCompute($singleparent)) {
+							if (customCompute($singleparent)) {
 								$this->userConfigEmail($message, $singleparent, $usertypeID);
 								$array = array(
 									'usertypeID' => $usertypeID,
@@ -523,14 +529,14 @@ class Mailandsms extends Admin_Controller {
 						}
 					} else { /* FOR ALL USERS */
 						$userID = $this->input->post('email_users');
-						if($userID == 'select') {
+						if ($userID == 'select') {
 							$message = $this->input->post('email_message');
 							$multiusers = $this->user_m->get_order_by_user(array('usertypeID' => $usertypeID));
-							if(customCompute($multiusers)) {
+							if (customCompute($multiusers)) {
 								$countusers = '';
 								foreach ($multiusers as $key => $multiuser) {
 									$this->userConfigEmail($message, $multiuser, $usertypeID);
-									$countusers .= $multiuser->name .' ,';
+									$countusers .= $multiuser->name . ' ,';
 								}
 								$array = array(
 									'usertypeID' => $usertypeID,
@@ -550,7 +556,7 @@ class Mailandsms extends Admin_Controller {
 						} else {
 							$message = $this->input->post('email_message');
 							$singleuser = $this->user_m->get_user($userID);
-							if(customCompute($singleuser)) {
+							if (customCompute($singleuser)) {
 								$this->userConfigEmail($message, $singleuser, $usertypeID);
 								$array = array(
 									'usertypeID' => $usertypeID,
@@ -570,7 +576,7 @@ class Mailandsms extends Admin_Controller {
 						}
 					}
 				}
-			} elseif($this->input->post('type') == "sms") {
+			} elseif ($this->input->post('type') == "sms") {
 				$rules = $this->rules_sms();
 				$this->form_validation->set_rules($rules);
 				if ($this->form_validation->run() == FALSE) {
@@ -594,29 +600,28 @@ class Mailandsms extends Admin_Controller {
 					$usertypeID = $this->input->post('sms_usertypeID');
 					$schoolyearID = $this->input->post('sms_schoolyear');
 
-					if($usertypeID == 1) { /* FOR ADMIN */
+					if ($usertypeID == 1) { /* FOR ADMIN */
 						$systemadminID = $this->input->post('sms_users');
-						if($systemadminID == 'select') {
+						if ($systemadminID == 'select') {
 							$countusers = '';
 							$retval = 1;
 							$retmess = '';
 
 							$message = $this->input->post('sms_message');
 							$multisystemadmins = $this->systemadmin_m->get_systemadmin();
-							if(customCompute($multisystemadmins)) {
+							if (customCompute($multisystemadmins)) {
 
 								foreach ($multisystemadmins as $key => $multisystemadmin) {
 									$status = $this->userConfigSMS($message, $multisystemadmin, $usertypeID, $getway);
-									$countusers .= $multisystemadmin->name .' ,';
+									$countusers .= $multisystemadmin->name . ' ,';
 
-									if($status['check'] == FALSE) {
+									if ($status['check'] == FALSE) {
 										$retval = 0;
 										$retmess = $status['message'];
 										break;
 									}
-
 								}
-								if($retval == 1) {
+								if ($retval == 1) {
 									$array = array(
 										'usertypeID' => $usertypeID,
 										'users' => $countusers,
@@ -641,14 +646,14 @@ class Mailandsms extends Admin_Controller {
 							$retmess = '';
 							$message = $this->input->post('sms_message');
 							$singlesystemadmin = $this->systemadmin_m->get_systemadmin($systemadminID);
-							if(customCompute($singlesystemadmin)) {
+							if (customCompute($singlesystemadmin)) {
 								$status = $this->userConfigSMS($message, $singlesystemadmin, $usertypeID, $getway);
-								if($status['check'] == FALSE) {
+								if ($status['check'] == FALSE) {
 									$retval = 0;
 									$retmess = $status['message'];
 								}
 
-								if($retval == 1) {
+								if ($retval == 1) {
 									$array = array(
 										'usertypeID' => $usertypeID,
 										'users' => $singlesystemadmin->name,
@@ -669,27 +674,26 @@ class Mailandsms extends Admin_Controller {
 								redirect(base_url('mailandsms/add'));
 							}
 						}
-					} elseif($usertypeID == 2) { /* FOR TEACHER */
+					} elseif ($usertypeID == 2) { /* FOR TEACHER */
 						$teacherID = $this->input->post('sms_users');
-						if($teacherID == 'select') {
+						if ($teacherID == 'select') {
 							$message = $this->input->post('sms_message');
 							$multiteachers = $this->teacher_m->general_get_teacher();
-							if(customCompute($multiteachers)) {
+							if (customCompute($multiteachers)) {
 								$countusers = '';
 								$retval = 1;
 								$retmess = '';
 								foreach ($multiteachers as $key => $multiteacher) {
 									$status = $this->userConfigSMS($message, $multiteacher, $usertypeID, $getway);
-									$countusers .= $multiteacher->name .' ,';
+									$countusers .= $multiteacher->name . ' ,';
 
-									if($status['check'] == FALSE) {
+									if ($status['check'] == FALSE) {
 										$retval = 0;
 										$retmess = $status['message'];
 										break;
 									}
-
 								}
-								if($retval == 1) {
+								if ($retval == 1) {
 									$array = array(
 										'usertypeID' => $usertypeID,
 										'users' => $countusers,
@@ -714,14 +718,14 @@ class Mailandsms extends Admin_Controller {
 							$retmess = '';
 							$message = $this->input->post('sms_message');
 							$singleteacher = $this->teacher_m->general_get_teacher($teacherID);
-							if(customCompute($singleteacher)) {
+							if (customCompute($singleteacher)) {
 								$status = $this->userConfigSMS($message, $singleteacher, $usertypeID, $getway);
-								if($status['check'] == FALSE) {
+								if ($status['check'] == FALSE) {
 									$retval = 0;
 									$retmess = $status['message'];
 								}
 
-								if($retval == 1) {
+								if ($retval == 1) {
 									$array = array(
 										'usertypeID' => $usertypeID,
 										'users' => $singleteacher->name,
@@ -742,33 +746,33 @@ class Mailandsms extends Admin_Controller {
 								redirect(base_url('mailandsms/add'));
 							}
 						}
-					} elseif($usertypeID == 3) { /* FOR STUDENT */
+					} elseif ($usertypeID == 3) { /* FOR STUDENT */
 
 						$studentID = $this->input->post('sms_users');
-						if($studentID == 'select') {
+						if ($studentID == 'select') {
 							$class = $this->input->post('sms_class');
-							if($class == 'select') {
+							if ($class == 'select') {
 								/* Multi School Year */
 								$countusers = '';
 								$retval = 1;
 								$retmess = '';
 
 								$schoolyear = $this->input->post('sms_schoolyear');
-								if($schoolyear == 'select') {
+								if ($schoolyear == 'select') {
 									$message = $this->input->post('sms_message');
 									$multiSchoolYearStudents = $this->studentrelation_m->general_get_student(TRUE);
-									if(customCompute($multiSchoolYearStudents)) {
+									if (customCompute($multiSchoolYearStudents)) {
 										foreach ($multiSchoolYearStudents as $key => $multiSchoolYearStudent) {
 											$status = $this->userConfigSMS($message, $multiSchoolYearStudent, $usertypeID, $getway, $multiSchoolYearStudent->srschoolyearID);
-											$countusers .= $multiSchoolYearStudent->srname .' ,';
-											if($status['check'] == FALSE) {
+											$countusers .= $multiSchoolYearStudent->srname . ' ,';
+											if ($status['check'] == FALSE) {
 												$retval = 0;
 												$retmess = $status['message'];
 												break;
 											}
 										}
 
-										if($retval == 1) {
+										if ($retval == 1) {
 											$array = array(
 												'usertypeID' => $usertypeID,
 												'users' => $countusers,
@@ -796,17 +800,17 @@ class Mailandsms extends Admin_Controller {
 									$message = $this->input->post('sms_message');
 									$singleSchoolYear = $this->input->post('sms_schoolyear');
 									$singleSchoolYearStudents = $this->studentrelation_m->general_get_order_by_student(array('srschoolyearID' => $singleSchoolYear), TRUE);
-									if(customCompute($singleSchoolYearStudents)) {
+									if (customCompute($singleSchoolYearStudents)) {
 										foreach ($singleSchoolYearStudents as $key => $singleSchoolYearStudent) {
 											$status = $this->userConfigSMS($message, $singleSchoolYearStudent, $usertypeID, $getway, $schoolyearID);
-											$countusers .= $singleSchoolYearStudent->srname .' ,';
-											if($status['check'] == FALSE) {
+											$countusers .= $singleSchoolYearStudent->srname . ' ,';
+											if ($status['check'] == FALSE) {
 												$retval = 0;
 												$retmess = $status['message'];
 												break;
 											}
 										}
-										if($retval == 1) {
+										if ($retval == 1) {
 											$array = array(
 												'usertypeID' => $usertypeID,
 												'users' => $countusers,
@@ -835,26 +839,25 @@ class Mailandsms extends Admin_Controller {
 
 								$message = $this->input->post('sms_message');
 								$singleClass = $this->input->post('sms_class');
-                                $singleSection = $this->input->post('sms_section');
-                                if((int)$singleSection){
-                                    $singleClassStudents = $this->studentrelation_m->general_get_order_by_student(array('srclassesID' => $singleClass,'srsectionID' => $singleSection, 'srschoolyearID' => $schoolyearID), TRUE);
-
-                                }else {
-                                    $singleClassStudents = $this->studentrelation_m->general_get_order_by_student(array('srclassesID' => $singleClass, 'srschoolyearID' => $schoolyearID), TRUE);
-                                }
-								if(customCompute($singleClassStudents)) {
+								$singleSection = $this->input->post('sms_section');
+								if ((int)$singleSection) {
+									$singleClassStudents = $this->studentrelation_m->general_get_order_by_student(array('srclassesID' => $singleClass, 'srsectionID' => $singleSection, 'srschoolyearID' => $schoolyearID), TRUE);
+								} else {
+									$singleClassStudents = $this->studentrelation_m->general_get_order_by_student(array('srclassesID' => $singleClass, 'srschoolyearID' => $schoolyearID), TRUE);
+								}
+								if (customCompute($singleClassStudents)) {
 									$countusers = '';
 									foreach ($singleClassStudents as $key => $singleClassStudent) {
 										$status = $this->userConfigSMS($message, $singleClassStudent, $usertypeID, $getway, $schoolyearID);
-										$countusers .= $singleClassStudent->srname .' ,';
-										if($status['check'] == FALSE) {
+										$countusers .= $singleClassStudent->srname . ' ,';
+										if ($status['check'] == FALSE) {
 											$retval = 0;
 											$retmess = $status['message'];
 											break;
 										}
 									}
 
-									if($retval == 1) {
+									if ($retval == 1) {
 										$array = array(
 											'usertypeID' => $usertypeID,
 											'users' => $countusers,
@@ -882,13 +885,13 @@ class Mailandsms extends Admin_Controller {
 
 							$message = $this->input->post('sms_message');
 							$singlestudent = $this->studentrelation_m->general_get_single_student(array('srstudentID' => $studentID, 'srschoolyearID' => $schoolyearID), TRUE);
-							if(customCompute($singlestudent)) {
+							if (customCompute($singlestudent)) {
 								$status = $this->userConfigSMS($message, $singlestudent, $usertypeID, $getway, $schoolyearID);
-								if($status['check'] == FALSE) {
+								if ($status['check'] == FALSE) {
 									$retval = 0;
 									$retmess = $status['message'];
 								}
-								if($retval == 1) {
+								if ($retval == 1) {
 									$array = array(
 										'usertypeID' => $usertypeID,
 										'users' =>  $singlestudent->srname,
@@ -909,29 +912,29 @@ class Mailandsms extends Admin_Controller {
 								redirect(base_url('mailandsms/add'));
 							}
 						}
-					} elseif($usertypeID == 4) { /* FOR PARENTS */
+					} elseif ($usertypeID == 4) { /* FOR PARENTS */
 						$parentsID = $this->input->post('sms_users');
-						if($parentsID == 'select') {
+						if ($parentsID == 'select') {
 							$countusers = '';
 							$retval = 1;
 							$retmess = '';
 
 							$message = $this->input->post('sms_message');
 							$multiparents = $this->parents_m->get_parents();
-							if(customCompute($multiparents)) {
+							if (customCompute($multiparents)) {
 
 								foreach ($multiparents as $key => $multiparent) {
 									$status = $this->userConfigSMS($message, $multiparent, $usertypeID, $getway);
-									$countusers .= $multiparent->name .' ,';
+									$countusers .= $multiparent->name . ' ,';
 
-									if($status['check'] == FALSE) {
+									if ($status['check'] == FALSE) {
 										$retval = 0;
 										$retmess = $status['message'];
 										break;
 									}
 								}
 
-								if($retval == 1) {
+								if ($retval == 1) {
 									$array = array(
 										'usertypeID' => $usertypeID,
 										'users' => $countusers,
@@ -957,15 +960,14 @@ class Mailandsms extends Admin_Controller {
 
 							$message = $this->input->post('sms_message');
 							$singleparent = $this->parents_m->get_parents($parentsID);
-							if(customCompute($singleparent)) {
+							if (customCompute($singleparent)) {
 								$status = $this->userConfigSMS($message, $singleparent, $usertypeID, $getway);
-								if($status['check'] == FALSE) {
+								if ($status['check'] == FALSE) {
 									$retval = 0;
 									$retmess = $status['message'];
-
 								}
 
-								if($retval == 1) {
+								if ($retval == 1) {
 									$array = array(
 										'usertypeID' => $usertypeID,
 										'users' => $singleparent->name,
@@ -981,7 +983,6 @@ class Mailandsms extends Admin_Controller {
 									$this->session->set_flashdata('error', $retmess);
 									redirect(base_url("mailandsms/add"));
 								}
-
 							} else {
 								$this->session->set_flashdata('error', $this->lang->line('mailandsms_notfound_error'));
 								redirect(base_url('mailandsms/add'));
@@ -989,25 +990,25 @@ class Mailandsms extends Admin_Controller {
 						}
 					} else { /* FOR ALL USERS */
 						$userID = $this->input->post('sms_users');
-						if($userID == 'select') {
+						if ($userID == 'select') {
 							$countusers = '';
 							$retval = 1;
 							$retmess = '';
 							$message = $this->input->post('sms_message');
 							$multiusers = $this->user_m->get_order_by_user(array('usertypeID' => $usertypeID));
-							if(customCompute($multiusers)) {
+							if (customCompute($multiusers)) {
 								foreach ($multiusers as $key => $multiuser) {
 									$status = $this->userConfigSMS($message, $multiuser, $usertypeID, $getway);
-									$countusers .= $multiuser->name .' ,';
+									$countusers .= $multiuser->name . ' ,';
 
-									if($status['check'] == FALSE) {
+									if ($status['check'] == FALSE) {
 										$retval = 0;
 										$retmess = $status['message'];
 										break;
 									}
 								}
 
-								if($retval == 1) {
+								if ($retval == 1) {
 									$array = array(
 										'usertypeID' => $usertypeID,
 										'users' => $countusers,
@@ -1032,14 +1033,14 @@ class Mailandsms extends Admin_Controller {
 							$retmess = '';
 							$message = $this->input->post('sms_message');
 							$singleuser = $this->user_m->get_user($userID);
-							if(customCompute($singleuser)) {
+							if (customCompute($singleuser)) {
 								$status = $this->userConfigSMS($message, $singleuser, $usertypeID, $getway);
-								if($status['check'] == FALSE) {
+								if ($status['check'] == FALSE) {
 									$retval = 0;
 									$retmess = $status['message'];
 								}
 
-								if($retval == 1) {
+								if ($retval == 1) {
 									$array = array(
 										'usertypeID' => $usertypeID,
 										'users' => $singleuser->name,
@@ -1062,11 +1063,11 @@ class Mailandsms extends Admin_Controller {
 						}
 					}
 				}
-			} elseif($this->input->post('type') == "otheremail") {
+			} elseif ($this->input->post('type') == "otheremail") {
 				$rules = $this->rules_otheremail();
 				$this->form_validation->set_rules($rules);
 				if ($this->form_validation->run() == FALSE) {
-					
+
 					$this->data['emailUserID'] = 0;
 					$this->data['emailTemplateID'] = 0;
 					$this->data['allStudents'] = [];
@@ -1086,7 +1087,7 @@ class Mailandsms extends Admin_Controller {
 					$message = $this->input->post('otheremail_message');
 
 					$result  = $this->inilabs->sendMailSystem($email, $subject, $message);
-					if($result) {
+					if ($result) {
 						$array = array(
 							'usertypeID' => '0',
 							'users' => $this->input->post('otheremail_name'),
@@ -1104,7 +1105,7 @@ class Mailandsms extends Admin_Controller {
 						redirect(base_url("mailandsms/add"));
 					}
 				}
-			} elseif($this->input->post('type') == "othersms") {
+			} elseif ($this->input->post('type') == "othersms") {
 				$rules = $this->rules_othersms();
 				$this->form_validation->set_rules($rules);
 				if ($this->form_validation->run() == FALSE) {
@@ -1128,7 +1129,7 @@ class Mailandsms extends Admin_Controller {
 					$message = $this->input->post('othersms_message');
 
 					$result = $this->allgetway_send_message($getway, $to, $message);
-					if($result['check']) {
+					if ($result['check']) {
 						$array = array(
 							'usertypeID' => '0',
 							'users' => $this->input->post('othersms_name'),
@@ -1168,15 +1169,16 @@ class Mailandsms extends Admin_Controller {
 		}
 	}
 
-	private function userConfigEmail($message, $user, $usertypeID, $schoolyearID = 1) {
-		if($user && $usertypeID) {
+	private function userConfigEmail($message, $user, $usertypeID, $schoolyearID = 1)
+	{
+		if ($user && $usertypeID) {
 			$userTags = $this->mailandsmstemplatetag_m->get_order_by_mailandsmstemplatetag(array('usertypeID' => $usertypeID));
 
-			if($usertypeID == 2) {
+			if ($usertypeID == 2) {
 				$userTags = $this->mailandsmstemplatetag_m->get_order_by_mailandsmstemplatetag(array('usertypeID' => 2));
-			} elseif($usertypeID == 3) {
+			} elseif ($usertypeID == 3) {
 				$userTags = $this->mailandsmstemplatetag_m->get_order_by_mailandsmstemplatetag(array('usertypeID' => 3));
-			} elseif($usertypeID == 4) {
+			} elseif ($usertypeID == 4) {
 				$userTags = $this->mailandsmstemplatetag_m->get_order_by_mailandsmstemplatetag(array('usertypeID' => 4));
 			} else {
 				$userTags = $this->mailandsmstemplatetag_m->get_order_by_mailandsmstemplatetag(array('usertypeID' => 1));
@@ -1184,22 +1186,22 @@ class Mailandsms extends Admin_Controller {
 
 			$message = $this->tagConvertor($userTags, $user, $message, 'email', $schoolyearID);
 
-			if($user->email) {
+			if ($user->email) {
 				$subject = $this->input->post('email_subject');
 				$email = $user->email;
 
 				$emailsetting = $this->emailsetting_m->get_emailsetting();
 				$this->email->set_mailtype("html");
-				if(customCompute($emailsetting)) {
-					if($emailsetting->email_engine == 'smtp') {
+				if (customCompute($emailsetting)) {
+					if ($emailsetting->email_engine == 'smtp') {
 						$config = array(
-						    'protocol'  => 'smtp',
-						    'smtp_host' => $emailsetting->smtp_server,
-						    'smtp_port' => $emailsetting->smtp_port,
-						    'smtp_user' => $emailsetting->smtp_username,
-						    'smtp_pass' => $emailsetting->smtp_password,
-						    'mailtype'  => 'html',
-						    'charset'   => 'utf-8'
+							'protocol'  => 'smtp',
+							'smtp_host' => $emailsetting->smtp_server,
+							'smtp_port' => $emailsetting->smtp_port,
+							'smtp_user' => $emailsetting->smtp_username,
+							'smtp_pass' => $emailsetting->smtp_password,
+							'mailtype'  => 'html',
+							'charset'   => 'utf-8'
 						);
 						$this->email->initialize($config);
 						$this->email->set_newline("\r\n");
@@ -1209,7 +1211,7 @@ class Mailandsms extends Admin_Controller {
 					$this->email->from($this->data['siteinfos']->email, $this->data['siteinfos']->sname);
 					$this->email->subject($subject);
 					$this->email->message($message);
-					if($this->email->send()) {
+					if ($this->email->send()) {
 						$this->session->set_flashdata('success', $this->lang->line('mail_success'));
 					} else {
 						$this->session->set_flashdata('error', $this->lang->line('mail_error'));
@@ -1219,22 +1221,23 @@ class Mailandsms extends Admin_Controller {
 		}
 	}
 
-	private function userConfigSMS($message, $user, $usertypeID, $getway, $schoolyearID = 1) {
-		if($user && $usertypeID) {
+	private function userConfigSMS($message, $user, $usertypeID, $getway, $schoolyearID = 1)
+	{
+		if ($user && $usertypeID) {
 			$userTags = $this->mailandsmstemplatetag_m->get_order_by_mailandsmstemplatetag(array('usertypeID' => $usertypeID));
 
-			if($usertypeID == 2) {
+			if ($usertypeID == 2) {
 				$userTags = $this->mailandsmstemplatetag_m->get_order_by_mailandsmstemplatetag(array('usertypeID' => 2));
-			} elseif($usertypeID == 3) {
+			} elseif ($usertypeID == 3) {
 				$userTags = $this->mailandsmstemplatetag_m->get_order_by_mailandsmstemplatetag(array('usertypeID' => 3));
-			} elseif($usertypeID == 4) {
+			} elseif ($usertypeID == 4) {
 				$userTags = $this->mailandsmstemplatetag_m->get_order_by_mailandsmstemplatetag(array('usertypeID' => 4));
 			} else {
 				$userTags = $this->mailandsmstemplatetag_m->get_order_by_mailandsmstemplatetag(array('usertypeID' => 1));
 			}
 
 			$message = $this->tagConvertor($userTags, $user, $message, 'SMS', $schoolyearID);
-			if($user->phone) {
+			if ($user->phone) {
 				$send = $this->allgetway_send_message($getway, $user->phone, $message);
 				return $send;
 			} else {
@@ -1244,111 +1247,112 @@ class Mailandsms extends Admin_Controller {
 		}
 	}
 
-	private function tagConvertor($userTags, $user, $message, $sendType, $schoolyearID) {
-		if(customCompute($userTags)) {
+	private function tagConvertor($userTags, $user, $message, $sendType, $schoolyearID)
+	{
+		if (customCompute($userTags)) {
 			foreach ($userTags as $key => $userTag) {
-				if($userTag->tagname == '[name]') {
-					if($user->name) {
+				if ($userTag->tagname == '[name]') {
+					if ($user->name) {
 						$message = str_replace('[name]', $user->name, $message);
 					} else {
 						$message = str_replace('[name]', ' ', $message);
 					}
-				} elseif($userTag->tagname == '[designation]') {
-					if($user->designation) {
+				} elseif ($userTag->tagname == '[designation]') {
+					if ($user->designation) {
 						$message = str_replace('[designation]', $user->designation, $message);
 					} else {
 						$message = str_replace('[designation]', ' ', $message);
 					}
-				} elseif($userTag->tagname == '[dob]') {
-					if($user->dob) {
+				} elseif ($userTag->tagname == '[dob]') {
+					if ($user->dob) {
 						$dob =  date("d M Y", strtotime($user->dob));
 						$message = str_replace('[dob]', $dob, $message);
 					} else {
 						$message = str_replace('[dob]', ' ', $message);
 					}
-				} elseif($userTag->tagname == '[gender]') {
-					if($user->sex) {
+				} elseif ($userTag->tagname == '[gender]') {
+					if ($user->sex) {
 						$message = str_replace('[gender]', $user->sex, $message);
 					} else {
 						$message = str_replace('[gender]', ' ', $message);
 					}
-				} elseif($userTag->tagname == '[religion]') {
-					if($user->religion) {
+				} elseif ($userTag->tagname == '[religion]') {
+					if ($user->religion) {
 						$message = str_replace('[religion]', $user->religion, $message);
 					} else {
 						$message = str_replace('[religion]', ' ', $message);
 					}
-				} elseif($userTag->tagname == '[email]') {
-					if($user->email) {
+				} elseif ($userTag->tagname == '[email]') {
+					if ($user->email) {
 						$message = str_replace('[email]', $user->email, $message);
 					} else {
 						$message = str_replace('[email]', ' ', $message);
 					}
-				} elseif($userTag->tagname == '[phone]') {
-					if($user->phone) {
+				} elseif ($userTag->tagname == '[phone]') {
+					if ($user->phone) {
 						$message = str_replace('[phone]', $user->phone, $message);
 					} else {
 						$message = str_replace('[phone]', ' ', $message);
 					}
-				} elseif($userTag->tagname == '[address]') {
-					if($user->address) {
+				} elseif ($userTag->tagname == '[address]') {
+					if ($user->address) {
 						$message = str_replace('[address]', $user->address, $message);
 					} else {
 						$message = str_replace('[address]', ' ', $message);
 					}
-				} elseif($userTag->tagname == '[jod]') {
-					if($user->jod) {
+				} elseif ($userTag->tagname == '[jod]') {
+					if ($user->jod) {
 						$jod =  date("d M Y", strtotime($user->jod));
 						$message = str_replace('[jod]', $jod, $message);
 					} else {
 						$message = str_replace('[jod]', ' ', $message);
 					}
-				} elseif($userTag->tagname == '[username]') {
-					if($user->username) {
+				} elseif ($userTag->tagname == '[username]') {
+					if ($user->username) {
 						$message = str_replace('[username]', $user->username, $message);
 					} else {
 						$message = str_replace('[username]', ' ', $message);
 					}
-				} elseif($userTag->tagname == "[father's_name]") {
-					if($user->father_name) {
+				} elseif ($userTag->tagname == "[father's_name]") {
+					if ($user->father_name) {
 						$message = str_replace("[father's_name]", $user->father_name, $message);
 					} else {
 						$message = str_replace("[father's_name]", ' ', $message);
 					}
-				} elseif($userTag->tagname == "[mother's_name]") {
-					if($user->mother_name) {
+				} elseif ($userTag->tagname == "[mother's_name]") {
+					if ($user->mother_name) {
 						$message = str_replace("[mother's_name]", $user->mother_name, $message);
 					} else {
 						$message = str_replace("[mother's_name]", ' ', $message);
 					}
-				} elseif($userTag->tagname == "[father's_profession]") {
-					if($user->father_profession) {
+				} elseif ($userTag->tagname == "[father's_profession]") {
+					if ($user->father_profession) {
 						$message = str_replace("[father's_profession]", $user->father_profession, $message);
 					} else {
 						$message = str_replace("[father's_profession]", ' ', $message);
 					}
-				} elseif($userTag->tagname == "[mother's_profession]") {
-					if($user->mother_profession) {
+				} elseif ($userTag->tagname == "[mother's_profession]") {
+					if ($user->mother_profession) {
 						$message = str_replace("[mother's_profession]", $user->mother_profession, $message);
 					} else {
 						$message = str_replace("[mother's_profession]", ' ', $message);
 					}
-				} elseif($userTag->tagname == '[class]') {
+				} elseif ($userTag->tagname == '[class]') {
 					$classes = $this->classes_m->general_get_classes($user->srclassesID);
-					if(customCompute($classes)) {
+					if (customCompute($classes)) {
 						$message = str_replace('[class]', $classes->classes, $message);
 					} else {
 						$message = str_replace('[class]', ' ', $message);
 					}
-				} elseif($userTag->tagname == '[roll]') {
-					if($user->srroll) {
+				} elseif ($userTag->tagname == '[roll]') {
+					if ($user->srroll) {
 						$message = str_replace("[roll]", $user->srroll, $message);
 					} else {
 						$message = str_replace("[roll]", ' ', $message);
 					}
-				} elseif($userTag->tagname == '[country]') {
-					if($user->country) {
-						if(isset($this->data['allcountry'][$user->country])) {
+				} elseif ($userTag->tagname == '[country]') {
+					if ($user->country) {
+						if (isset($this->data['allcountry'][$user->country])) {
 							$message = str_replace("[country]", $this->data['allcountry'][$user->country], $message);
 						} else {
 							$message = str_replace("[country]", ' ', $message);
@@ -1356,83 +1360,83 @@ class Mailandsms extends Admin_Controller {
 					} else {
 						$message = str_replace("[country]", ' ', $message);
 					}
-				} elseif($userTag->tagname == '[state]') {
-					if($user->state) {
+				} elseif ($userTag->tagname == '[state]') {
+					if ($user->state) {
 						$message = str_replace("[state]", $user->state, $message);
 					} else {
 						$message = str_replace("[state]", ' ', $message);
 					}
-				} elseif($userTag->tagname == '[register_no]') {
-					if($user->srregisterNO) {
+				} elseif ($userTag->tagname == '[register_no]') {
+					if ($user->srregisterNO) {
 						$message = str_replace("[register_no]", $user->srregisterNO, $message);
 					} else {
 						$message = str_replace("[register_no]", ' ', $message);
 					}
-				} elseif($userTag->tagname == '[section]') {
-					if($user->srsectionID) {
+				} elseif ($userTag->tagname == '[section]') {
+					if ($user->srsectionID) {
 						$section = $this->section_m->general_get_section($user->srsectionID);
-						if(customCompute($section)) {
+						if (customCompute($section)) {
 							$message = str_replace('[section]', $section->section, $message);
 						} else {
-							$message = str_replace('[section]',' ', $message);
+							$message = str_replace('[section]', ' ', $message);
 						}
 					} else {
 						$message = str_replace("[section]", ' ', $message);
 					}
-				} elseif($userTag->tagname == '[blood_group]') {
-					if($user->bloodgroup && $user->bloodgroup != '0') {
+				} elseif ($userTag->tagname == '[blood_group]') {
+					if ($user->bloodgroup && $user->bloodgroup != '0') {
 						$message = str_replace("[blood_group]", $user->bloodgroup, $message);
 					} else {
 						$message = str_replace("[blood_group]", ' ', $message);
 					}
-				} elseif($userTag->tagname == '[group]') {
-					if($user->srstudentgroupID && $user->srstudentgroupID != 0) {
+				} elseif ($userTag->tagname == '[group]') {
+					if ($user->srstudentgroupID && $user->srstudentgroupID != 0) {
 						$group = $this->studentgroup_m->get_studentgroup($user->srstudentgroupID);
-						if(customCompute($group)) {
+						if (customCompute($group)) {
 							$message = str_replace('[group]', $group->group, $message);
 						} else {
-							$message = str_replace('[group]',' ', $message);
+							$message = str_replace('[group]', ' ', $message);
 						}
 					} else {
-						$message = str_replace('[group]',' ', $message);
+						$message = str_replace('[group]', ' ', $message);
 					}
-				} elseif($userTag->tagname == '[optional_subject]') {
-					if($user->sroptionalsubjectID && $user->sroptionalsubjectID != 0) {
+				} elseif ($userTag->tagname == '[optional_subject]') {
+					if ($user->sroptionalsubjectID && $user->sroptionalsubjectID != 0) {
 						$subject = $this->subject_m->general_get_single_subject(array('subjectID' => $user->sroptionalsubjectID));
-						if(customCompute($subject)) {
+						if (customCompute($subject)) {
 							$message = str_replace('[optional_subject]', $subject->subject, $message);
 						} else {
-							$message = str_replace('[optional_subject]',' ', $message);
+							$message = str_replace('[optional_subject]', ' ', $message);
 						}
 					} else {
-						$message = str_replace('[optional_subject]',' ', $message);
+						$message = str_replace('[optional_subject]', ' ', $message);
 					}
-				} elseif($userTag->tagname == '[extra_curricular_activities]') {
-					if($user->extracurricularactivities) {
+				} elseif ($userTag->tagname == '[extra_curricular_activities]') {
+					if ($user->extracurricularactivities) {
 						$message = str_replace("[extra_curricular_activities]", $user->extracurricularactivities, $message);
 					} else {
 						$message = str_replace("[extra_curricular_activities]", ' ', $message);
 					}
-				} elseif($userTag->tagname == '[remarks]') {
-					if($user->remarks) {
+				} elseif ($userTag->tagname == '[remarks]') {
+					if ($user->remarks) {
 						$message = str_replace("[remarks]", $user->remarks, $message);
 					} else {
 						$message = str_replace("[remarks]", ' ', $message);
 					}
-				} elseif($userTag->tagname == '[date]') {
+				} elseif ($userTag->tagname == '[date]') {
 					$message = str_replace("[date]", (date("d M Y")), $message);
-				} elseif($userTag->tagname == '[result_table]') {
-					if($sendType == 'email') {
-						if($user->usertypeID == 3) {
-							$this->load->library('mark', ['studentID'=> $user->srstudentID, 'classesID'=> $user->srclassesID, 'schoolyearID'=> $schoolyearID, 'data'=> $this->data['siteinfos']]);
+				} elseif ($userTag->tagname == '[result_table]') {
+					if ($sendType == 'email') {
+						if ($user->usertypeID == 3) {
+							$this->load->library('mark', ['studentID' => $user->srstudentID, 'classesID' => $user->srclassesID, 'schoolyearID' => $schoolyearID, 'data' => $this->data['siteinfos']]);
 							$result = $this->mark->mail();
 						} else {
 							$result = '';
 						}
 						$message = str_replace("[result_table]", $result, $message);
-					} elseif($sendType == 'SMS') {
-						if($user->usertypeID == 3) {
-							$this->load->library('mark', ['studentID'=> $user->srstudentID, 'classesID'=> $user->srclassesID, 'schoolyearID'=> $schoolyearID, 'data'=> $this->data['siteinfos']]);
+					} elseif ($sendType == 'SMS') {
+						if ($user->usertypeID == 3) {
+							$this->load->library('mark', ['studentID' => $user->srstudentID, 'classesID' => $user->srclassesID, 'schoolyearID' => $schoolyearID, 'data' => $this->data['siteinfos']]);
 							$result = $this->mark->sms();
 						} else {
 							$result = '';
@@ -1445,132 +1449,138 @@ class Mailandsms extends Admin_Controller {
 		return $message;
 	}
 
-	public function alltemplate() {
-		if($this->input->post('usertypeID') == 'select') {
-			echo '<option value="select">'.$this->lang->line('mailandsms_select_template').'</option>';
+	public function alltemplate()
+	{
+		if ($this->input->post('usertypeID') == 'select') {
+			echo '<option value="select">' . $this->lang->line('mailandsms_select_template') . '</option>';
 		} else {
 			$usertypeID = $this->input->post('usertypeID');
 			$type = $this->input->post('type');
 
 			$templates = $this->mailandsmstemplate_m->get_order_by_mailandsmstemplate(array('usertypeID' => $usertypeID, 'type' => $type));
-			echo '<option value="select">'.$this->lang->line('mailandsms_select_template').'</option>';
-			if(customCompute($templates)) {
+			echo '<option value="select">' . $this->lang->line('mailandsms_select_template') . '</option>';
+			if (customCompute($templates)) {
 				foreach ($templates as $key => $template) {
-					echo '<option value="'.$template->mailandsmstemplateID.'">'. $template->name  .'</option>';
+					echo '<option value="' . $template->mailandsmstemplateID . '">' . $template->name  . '</option>';
 				}
 			}
 		}
 	}
 
-	public function allusers() {
-		if($this->input->post('usertypeID') == 'select') {
-			echo '<option value="select">'.$this->lang->line('mailandsms_all_users').'</option>';
+	public function allusers()
+	{
+		if ($this->input->post('usertypeID') == 'select') {
+			echo '<option value="select">' . $this->lang->line('mailandsms_all_users') . '</option>';
 		} else {
 			$usertypeID = $this->input->post('usertypeID');
 			$userID = $this->input->post('userID');
 
-			if($usertypeID == 1) {
+			if ($usertypeID == 1) {
 				$systemadmins = $this->systemadmin_m->get_systemadmin();
-				if(customCompute($systemadmins)) {
-					echo "<option value='select'>".$this->lang->line('mailandsms_all_users')."</option>";
+				if (customCompute($systemadmins)) {
+					echo "<option value='select'>" . $this->lang->line('mailandsms_all_users') . "</option>";
 					foreach ($systemadmins as $key => $systemadmin) {
-						echo "<option value='".$systemadmin->systemadminID."'>".$systemadmin->name.'</option>';
+						echo "<option value='" . $systemadmin->systemadminID . "'>" . $systemadmin->name . '</option>';
 					}
 				} else {
-					echo '<option value="select">'.$this->lang->line('mailandsms_all_users').'</option>';
+					echo '<option value="select">' . $this->lang->line('mailandsms_all_users') . '</option>';
 				}
-			} elseif($usertypeID == 2) {
+			} elseif ($usertypeID == 2) {
 				$teachers = $this->teacher_m->general_get_teacher();
-				if(customCompute($teachers)) {
-					echo "<option value='select'>".$this->lang->line('mailandsms_all_users')."</option>";
+				if (customCompute($teachers)) {
+					echo "<option value='select'>" . $this->lang->line('mailandsms_all_users') . "</option>";
 					foreach ($teachers as $key => $teacher) {
-						echo "<option value='".$teacher->teacherID."'>".$teacher->name.'</option>';
+						echo "<option value='" . $teacher->teacherID . "'>" . $teacher->name . '</option>';
 					}
 				} else {
-					echo '<option value="select">'.$this->lang->line('mailandsms_all_users').'</option>';
+					echo '<option value="select">' . $this->lang->line('mailandsms_all_users') . '</option>';
 				}
-			} elseif($usertypeID == 3) {
+			} elseif ($usertypeID == 3) {
 				$classes = $this->classes_m->general_get_classes();
-				if(customCompute($classes)) {
-					echo "<option value='select'>".$this->lang->line('mailandsms_all_class')."</option>";
+				if (customCompute($classes)) {
+					echo "<option value='select'>" . $this->lang->line('mailandsms_all_class') . "</option>";
 					foreach ($classes as $key => $classm) {
-						echo "<option value='".$classm->classesID."'>".$classm->classes.'</option>';
+						echo "<option value='" . $classm->classesID . "'>" . $classm->classes . '</option>';
 					}
 				} else {
-					echo '<option value="select">'.$this->lang->line('mailandsms_all_class').'</option>';
+					echo '<option value="select">' . $this->lang->line('mailandsms_all_class') . '</option>';
 				}
-			} elseif($usertypeID == 4) {
+			} elseif ($usertypeID == 4) {
 				$parents = $this->parents_m->get_parents();
-				if(customCompute($parents)) {
-					echo "<option value='select'>".$this->lang->line('mailandsms_all_users')."</option>";
+				if (customCompute($parents)) {
+					echo "<option value='select'>" . $this->lang->line('mailandsms_all_users') . "</option>";
 					foreach ($parents as $key => $parent) {
-						echo "<option value='".$parent->parentsID."'>".$parent->name.'</option>';
+						echo "<option value='" . $parent->parentsID . "'>" . $parent->name . '</option>';
 					}
 				} else {
-					echo '<option value="select">'.$this->lang->line('mailandsms_all_users').'</option>';
+					echo '<option value="select">' . $this->lang->line('mailandsms_all_users') . '</option>';
 				}
 			} else {
 				$users = $this->user_m->get_order_by_user(array('usertypeID' => $usertypeID));
-				if(customCompute($users)) {
-					echo "<option value='select'>".$this->lang->line('mailandsms_all_users')."</option>";
+				if (customCompute($users)) {
+					echo "<option value='select'>" . $this->lang->line('mailandsms_all_users') . "</option>";
 					foreach ($users as $key => $user) {
-						echo "<option value='".$user->userID."'>".$user->name.'</option>';
+						echo "<option value='" . $user->userID . "'>" . $user->name . '</option>';
 					}
 				} else {
-					echo '<option value="select">'.$this->lang->line('mailandsms_all_users').'</option>';
+					echo '<option value="select">' . $this->lang->line('mailandsms_all_users') . '</option>';
 				}
 			}
 		}
 	}
 
-	public function allstudent() {
+	public function allstudent()
+	{
 		$schoolyearID = $this->input->post('schoolyear');
 		$classesID = $this->input->post('classes');
 		$sectionID = $this->input->post('section');
-		if((int)$schoolyearID && (int)$classesID) {
-		    if ((int)$sectionID){
-                $students = $this->studentrelation_m->get_order_by_student(array('srschoolyearID' => $schoolyearID,'srsectionID' => $sectionID, 'srclassesID' => $classesID));
-            }else {
-                $students = $this->studentrelation_m->get_order_by_student(array('srschoolyearID' => $schoolyearID, 'srclassesID' => $classesID));
-            }
-			if(customCompute($students)) {
-				echo '<option value="select">'.$this->lang->line('mailandsms_all_users').'</option>';
+		if ((int)$schoolyearID && (int)$classesID) {
+			if ((int)$sectionID) {
+				$students = $this->studentrelation_m->get_order_by_student(array('srschoolyearID' => $schoolyearID, 'srsectionID' => $sectionID, 'srclassesID' => $classesID));
+			} else {
+				$students = $this->studentrelation_m->get_order_by_student(array('srschoolyearID' => $schoolyearID, 'srclassesID' => $classesID));
+			}
+			if (customCompute($students)) {
+				echo '<option value="select">' . $this->lang->line('mailandsms_all_users') . '</option>';
 				foreach ($students as $key => $student) {
-					echo '<option value="'.$student->srstudentID.'">'.$student->srname.'</option>';
+					echo '<option value="' . $student->srstudentID . '">' . $student->srname . '</option>';
 				}
 			} else {
-				echo '<option value="select">'.$this->lang->line('mailandsms_all_users').'</option>';
+				echo '<option value="select">' . $this->lang->line('mailandsms_all_users') . '</option>';
 			}
 		} else {
-			echo '<option value="select">'.$this->lang->line('mailandsms_all_users').'</option>';
+			echo '<option value="select">' . $this->lang->line('mailandsms_all_users') . '</option>';
 		}
 	}
 
-    public function allsection() {
-        $classesID = $this->input->post('classes');
-        if((int)$classesID) {
-            $allsection = $this->section_m->general_get_order_by_section(array('classesID' => $classesID));
-            echo "<option value='select'>", $this->lang->line("mailandsms_all_section"),"</option>";
-            foreach ($allsection as $value) {
-                echo "<option value=\"$value->sectionID\">",$value->section,"</option>";
-            }
-        }
-    }
+	public function allsection()
+	{
+		$classesID = $this->input->post('classes');
+		if ((int)$classesID) {
+			$allsection = $this->section_m->general_get_order_by_section(array('classesID' => $classesID));
+			echo "<option value='select'>", $this->lang->line("mailandsms_all_section"), "</option>";
+			foreach ($allsection as $value) {
+				echo "<option value=\"$value->sectionID\">", $value->section, "</option>";
+			}
+		}
+	}
 
-	public function check_email_usertypeID() {
-		if($this->input->post('email_usertypeID') == 'select') {
+	public function check_email_usertypeID()
+	{
+		if ($this->input->post('email_usertypeID') == 'select') {
 			$this->form_validation->set_message("check_email_usertypeID", "The %s field is required");
-	     	return FALSE;
+			return FALSE;
 		} else {
 			return TRUE;
 		}
 	}
 
-	public function alltemplatedesign() {
-		if((int)$this->input->post('templateID')) {
+	public function alltemplatedesign()
+	{
+		if ((int)$this->input->post('templateID')) {
 			$templateID = $this->input->post('templateID');
 			$templates = $this->mailandsmstemplate_m->get_mailandsmstemplate($templateID);
-			if(customCompute($templates)) {
+			if (customCompute($templates)) {
 				echo $templates->template;
 			}
 		} else {
@@ -1578,74 +1588,77 @@ class Mailandsms extends Admin_Controller {
 		}
 	}
 
-	public function check_sms_usertypeID() {
-		if($this->input->post('sms_usertypeID') == 'select') {
+	public function check_sms_usertypeID()
+	{
+		if ($this->input->post('sms_usertypeID') == 'select') {
 			$this->form_validation->set_message("check_sms_usertypeID", "The %s field is required");
-	     	return FALSE;
+			return FALSE;
 		} else {
 			return TRUE;
 		}
 	}
 
-	public function check_getway() {
-		if($this->input->post('sms_getway') == 'select') {
+	public function check_getway()
+	{
+		if ($this->input->post('sms_getway') == 'select') {
 			$this->form_validation->set_message("check_getway", "The %s field is required");
-	     	return FALSE;
+			return FALSE;
 		} else {
 
 			$getway = $this->input->post('sms_getway');
 			$arrgetway = array('clickatell', 'twilio', 'bulk', 'msg91');
-			if(in_array($getway, $arrgetway)) {
-				if($getway == "clickatell") {
-					if($this->clickatell->ping() == TRUE) {
+			if (in_array($getway, $arrgetway)) {
+				if ($getway == "clickatell") {
+					if ($this->clickatell->ping() == TRUE) {
 						return TRUE;
 					} else {
 						$this->form_validation->set_message("check_getway", 'Setup Your clickatell Account');
-	     				return FALSE;
+						return FALSE;
 					}
 					return TRUE;
-				} elseif($getway == 'twilio') {
+				} elseif ($getway == 'twilio') {
 					$get = $this->twilio->get_twilio();
 					$ApiVersion = $get['version'];
 					$AccountSid = $get['accountSID'];
 					$check = $this->twilio->request("/$ApiVersion/Accounts/$AccountSid/Calls");
 
-					if($check->IsError) {
+					if ($check->IsError) {
 						$this->form_validation->set_message("check_getway", $check->ErrorMessage);
-	     				return FALSE;
+						return FALSE;
 					}
 					return TRUE;
-				} elseif($getway == 'bulk') {
-					if($this->bulk->ping() == TRUE) {
+				} elseif ($getway == 'bulk') {
+					if ($this->bulk->ping() == TRUE) {
 						return TRUE;
 					} else {
 						$this->form_validation->set_message("check_getway", 'Invalid Username or Password');
-	     				return FALSE;
+						return FALSE;
 					}
-				} elseif($getway == 'msg91') {
-                    return true;
+				} elseif ($getway == 'msg91') {
+					return true;
 				}
 			} else {
 				$this->form_validation->set_message("check_getway", "The %s field is required");
-	     		return FALSE;
+				return FALSE;
 			}
 		}
 	}
 
-	private function allgetway_send_message($getway, $to, $message) {
+	private function allgetway_send_message($getway, $to, $message)
+	{
 		$result = [];
-		if($getway == "clickatell") {
-			if($to) {
+		if ($getway == "clickatell") {
+			if ($to) {
 				$this->clickatell->send_message($to, $message);
 				$result['check'] = TRUE;
 				return $result;
 			}
-		} elseif($getway == 'twilio') {
+		} elseif ($getway == 'twilio') {
 			$get = $this->twilio->get_twilio();
 			$from = $get['number'];
-			if($to) {
+			if ($to) {
 				$response = $this->twilio->sms($from, $to, $message);
-				if($response->IsError) {
+				if ($response->IsError) {
 					$result['check'] = FALSE;
 					$result['message'] = $response->ErrorMessage;
 					return $result;
@@ -1653,11 +1666,10 @@ class Mailandsms extends Admin_Controller {
 					$result['check'] = TRUE;
 					return $result;
 				}
-
 			}
-		} elseif($getway == 'bulk') {
-			if($to) {
-				if($this->bulk->send($to, $message) == TRUE)  {
+		} elseif ($getway == 'bulk') {
+			if ($to) {
+				if ($this->bulk->send($to, $message) == TRUE) {
 					$result['check'] = TRUE;
 					return $result;
 				} else {
@@ -1666,9 +1678,9 @@ class Mailandsms extends Admin_Controller {
 					return $result;
 				}
 			}
-		} elseif($getway == 'msg91') {
-			if($to) {
-				if($this->msg91->send($to, $message) == TRUE)  {
+		} elseif ($getway == 'msg91') {
+			if ($to) {
+				if ($this->msg91->send($to, $message) == TRUE) {
 					$result['check'] = TRUE;
 					return $result;
 				} else {
@@ -1680,11 +1692,12 @@ class Mailandsms extends Admin_Controller {
 		}
 	}
 
-	public function view() {
+	public function view()
+	{
 		$id = htmlentities(escapeString($this->uri->segment(3)));
-		if((int)$id) {
+		if ((int)$id) {
 			$this->data['mailandsms'] = $this->mailandsms_m->get_mailandsms($id);
-			if($this->data['mailandsms']) {
+			if ($this->data['mailandsms']) {
 				$this->data["subview"] = "mailandsms/view";
 				$this->load->view('_layout_main', $this->data);
 			} else {
@@ -1697,13 +1710,14 @@ class Mailandsms extends Admin_Controller {
 		}
 	}
 
-	public function unique_data($data) {
-		if($data != "") {
-			if($data == "select") {
+	public function unique_data($data)
+	{
+		if ($data != "") {
+			if ($data == "select") {
 				$this->form_validation->set_message('unique_data', 'The %s field is required.');
 				return FALSE;
 			}
-		} 
+		}
 		return TRUE;
 	}
 }

@@ -200,17 +200,25 @@
             </div>
 
             <?php
-            if (form_error('email_sender'))
-                echo "<div class='form-group has-error' >";
-            else
-                echo "<div class='form-group' >";
+            if (form_error('email_sender')) {
+                echo "<div class='form-group has-error'>";
+            } else {
+                echo "<div class='form-group'>";
+            }
             ?>
             <label for="email_sender" class="col-sm-2 control-label">
                 <?= $this->lang->line("mailandsms_sender") ?> <span class>Sender</span>
             </label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" id="users" name="users"
-                value="<?= htmlspecialchars($this->session->userdata('users')) ?>" ></value>
+                <?php
+                // Ambil nama pengguna dari session
+                $name = $this->session->userdata("name");
+                // Potong nama jika panjangnya lebih dari 18 karakter
+                if (strlen($name) > 18) {
+                    $name = substr($name, 0, 18);
+                }
+                ?>
+                <input type="text" class="form-control" id="users" name="users" value="<?= htmlspecialchars($name) ?>" readonly>
             </div>
             <span class="col-sm-4 control-label">
                 <?php echo form_error('email_sender'); ?>
@@ -227,7 +235,7 @@
             <?= $this->lang->line("mailandsms_type") ?> <span class="text-red">*</span>
         </label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="email_type" name="email_type" value="<?= set_value('email_subject') ?>">
+        <input type="text" class="form-control" id="email_type" name="email_type" value="<?= set_value('email_type') ?>">
         </div>
         <span class="col-sm-4 control-label">
             <?php echo form_error('email_type'); ?>
