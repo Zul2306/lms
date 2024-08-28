@@ -199,31 +199,7 @@
                 </span>
             </div>
 
-            <?php
-            if (form_error('email_sender')) {
-                echo "<div class='form-group has-error'>";
-            } else {
-                echo "<div class='form-group'>";
-            }
-            ?>
-            <label for="email_sender" class="col-sm-2 control-label">
-                <?= $this->lang->line("mailandsms_sender") ?> <span class>Sender</span>
-            </label>
-            <div class="col-sm-6">
-                <?php
-                // Ambil nama pengguna dari session
-                $name = $this->session->userdata("name");
-                // Potong nama jika panjangnya lebih dari 18 karakter
-                if (strlen($name) > 18) {
-                    $name = substr($name, 0, 18);
-                }
-                ?>
-                <input type="text" class="form-control" id="users" name="users" value="<?= htmlspecialchars($name) ?>" readonly>
-            </div>
-            <span class="col-sm-4 control-label">
-                <?php echo form_error('email_sender'); ?>
-            </span>
-        </div>
+        
 
         <?php
         if (form_error('email_type'))

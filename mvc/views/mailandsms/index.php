@@ -28,12 +28,13 @@
                                 <th class="col-lg-1"><?= $this->lang->line('mailandsms_usertype') ?></th>
                                 <th class="col-lg-3"><?= $this->lang->line('mailandsms_users') ?></th>
                                 <th class="col-lg-1"><?= $this->lang->line('mailandsms_type') ?></th>
-                                <th class="col-lg-3"><?= $this->lang->line('mailandsms_sender') ?></th>
+                                <th class="col-lg-1"><?= $this->lang->line('mailandsms_sender') ?></th>
                                 <th class="col-lg-2"><?= $this->lang->line('mailandsms_dateandtime') ?></th>
                                 <th class="col-lg-3"><?= $this->lang->line('mailandsms_message') ?></th>
                                 <?php if (permissionChecker('mailandsms_view')) { ?>
                                     <th class="col-lg-1"><?= $this->lang->line('action') ?></th>
                                 <?php } ?>
+                                <label for="sender">Sender</label>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,7 +46,7 @@
                                             <?php echo $i; ?>
                                         </td>
                                         <td data-title="<?= $this->lang->line('mailandsms_usertype') ?>">
-                                            <?= ($mailandsms->usertypeID !== NULL) ? $mailandsms->usertype : $this->lang->line('mailandsms_guest_user') ?>
+                                            <?= ($mailandsms->usertypeID !== NULL) ? $mailandsms->usertypeID : $this->lang->line('mailandsms_guest_user') ?>
                                         </td>
 
                                         <td data-title="<?= $this->lang->line('mailandsms_users') ?>">
@@ -62,11 +63,11 @@
                                         </td>
                                         <td data-title="<?= $this->lang->line('mailandsms_sender') ?>"> <!-- New sender field -->
                                             <?php
-                                            // Assuming senderusertypeID and senderID are available in $mailandsms
+                                
                                             $senderType = $mailandsms->senderusertypeID; // Retrieve sender usertype ID
                                             $senderName = $mailandsms->senderID; // Retrieve sender ID
 
-                                            // Assuming you have a method to get the sender's name based on the ID and usertype
+
                                             if ($senderType == 1) { // Example for admin
                                                 $sender = $this->systemadmin_m->get_systemadmin($senderName);
                                             } elseif ($senderType == 2) { // Example for teacher
@@ -75,12 +76,11 @@
                                                 $sender = $this->student_m->general_get_Student($senderName);
                                             } elseif ($senderType == 4) { // Example for teacher
                                                 $sender = $this->parents_m->general_get_Parents($senderName);
-                                            } elseif ($senderType == 4) { // Example for teacher
+                                            } elseif ($senderType == 4) { // Example for  teacher
                                                 $sender = $this->parents_m->general_get_Parents($senderName);
                                             }else {
                                                 $sender = "Unknown";
                                             }
-
                                             echo isset($sender->name) ? $sender->name : $sender;
                                             ?>
                                         </td>
@@ -99,13 +99,9 @@
                                 }
                             } ?>
                         </tbody>
-
                     </table>
                 </div>
-
-
             </div> <!-- col-sm-12 -->
-
         </div><!-- row -->
     </div><!-- Body -->
 </div><!-- /.box -->

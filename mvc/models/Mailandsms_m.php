@@ -38,15 +38,26 @@ class Mailandsms_m extends MY_Model
 	public function get_all_mailandsms()
 	{
 		$query = $this->db->get('mailandsms');
-		return $query->result();  // Mengembalikan array objek
+		return $query->result();
 	}
 
-	public function get_filtered_mailandsms($usertypeID)
+
+
+	// Method untuk mendapatkan data yang difilter
+	public function get_filtered_mailandsms_by_user($user_id, $usertypeID)
 	{
-		$this->db->where('usertypeID', $usertypeID);
-		$query = $this->db->get('mailandsms');
-		return $query->result();  // Mengembalikan array objek
+		// Pastikan untuk memeriksa data yang relevan
+		$this->db->select('*');
+		$this->db->from('mailandsms');
+		$this->db->where('senderID', $user_id);
+		$this->db->where('senderusertypeID', $usertypeID);
+		$query = $this->db->get();
+		return $query->result();
 	}
+
+
+
+
 
 
 	function get_single_mailandsms($array = NULL)

@@ -188,20 +188,28 @@ class Mailandsms extends Admin_Controller
 
 	public function index()
 	{
-		$this->data['mailandsmss'] = $this->mailandsms_m->get_mailandsms_with_usertypeID();
-		$this->data["subview"] = "mailandsms/index";
-		$user_email = $this->session->userdata('user_email');
-		$usertypeID = $this->session->userdata('mailandsms'); // Misalkan role disimpan di session
+		// Ambil informasi pengguna yang login dari session
+		$user_id = $this->session->userdata('loginuserID'); // Pastikan nama session ini sesuai dengan yang digunakan
+		$usertypeID = $this->session->userdata('usertypeID'); // Pastikan ini sesuai dengan nama session yang digunakan
+		
+		// Tambahkan model jika belum di-load
+		$this->load->model('mailandsms_m');
 
-		// Mendapatkan data email sesuai dengan role
+		// Filter data berdasarkan role pengguna
 		if ($usertypeID == '1') {
-			$data['mailandsmss'] = $this->Mailandsms_m->get_all_mailandsms();
+			// Jika pengguna adalah admin, tampilkan semua data
+			$this->data['mailandsmss'] = $this->mailandsms_m->get_all_mailandsms();
 		} else {
-			$data['mailandsmss'] = $this->Mailandsms_m->get_filtered_mailandsms($usertypeID);
+			// Jika pengguna adalah non-admin, tampilkan data yang relevan dengan user
+			$this->data['mailandsmss'] = $this->mailandsms_m->get_filtered_mailandsms_by_user($user_id, $usertypeID);
 		}
-		$this->data["subview"] = "mailandsms/index";
+
+		// Load view dengan data yang sesuai
+		$this->data['subview'] = 'mailandsms/index';
 		$this->load->view('_layout_main', $this->data);
 	}
+
+
 
 	public function add()
 	{
