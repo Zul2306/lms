@@ -34,7 +34,7 @@
                                 <?php if (permissionChecker('mailandsms_view')) { ?>
                                     <th class="col-lg-1"><?= $this->lang->line('action') ?></th>
                                 <?php } ?>
-                                <label for="sender">Sender</label>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -46,7 +46,39 @@
                                             <?php echo $i; ?>
                                         </td>
                                         <td data-title="<?= $this->lang->line('mailandsms_usertype') ?>">
-                                            <?= ($mailandsms->usertypeID !== NULL) ? $mailandsms->usertypeID : $this->lang->line('mailandsms_guest_user') ?>
+                                            <?php
+                                            $usertypeName = "Unknown"; 
+                                            // Mapping usertypeID to usertype name
+                                            switch ($mailandsms->usertypeID) {
+                                                case 1:
+                                                    $usertypeName = "Admin";
+                                                    break;
+                                                case 2:
+                                                    $usertypeName = "Teacher";
+                                                    break;
+                                                case 3:
+                                                    $usertypeName = "Student";
+                                                    break;
+                                                case 4:
+                                                    $usertypeName = "Parents";
+                                                    break;
+                                                case 5:
+                                                    $usertypeName = "Accountant";
+                                                    break;
+                                                case 6:
+                                                    $usertypeName = "Librarian";
+                                                    break;
+                                                case 7:
+                                                    $usertypeName = "Receptionist";
+                                                    break;
+                                                case 8:
+                                                    $usertypeName = "Moderator";
+                                                    break;
+                                                default:
+                                                    $usertypeName = $this->lang->line('mailandsms_guest_user');
+                                            }
+                                            echo $usertypeName;
+                                            ?>
                                         </td>
 
                                         <td data-title="<?= $this->lang->line('mailandsms_users') ?>">
@@ -61,12 +93,11 @@
                                         <td data-title="<?= $this->lang->line('mailandsms_type') ?>">
                                             <?php echo $mailandsms->type; ?>
                                         </td>
-                                        <td data-title="<?= $this->lang->line('mailandsms_sender') ?>"> <!-- New sender field -->
+                                        <td data-title="<?= $this->lang->line('mailandsms_sender') ?>">
                                             <?php
-                                
+                                            
                                             $senderType = $mailandsms->senderusertypeID; // Retrieve sender usertype ID
                                             $senderName = $mailandsms->senderID; // Retrieve sender ID
-
 
                                             if ($senderType == 1) { // Example for admin
                                                 $sender = $this->systemadmin_m->get_systemadmin($senderName);
@@ -76,9 +107,7 @@
                                                 $sender = $this->student_m->general_get_Student($senderName);
                                             } elseif ($senderType == 4) { // Example for teacher
                                                 $sender = $this->parents_m->general_get_Parents($senderName);
-                                            } elseif ($senderType == 4) { // Example for  teacher
-                                                $sender = $this->parents_m->general_get_Parents($senderName);
-                                            }else {
+                                            } else {
                                                 $sender = "Unknown";
                                             }
                                             echo isset($sender->name) ? $sender->name : $sender;

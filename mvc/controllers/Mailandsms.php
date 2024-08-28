@@ -189,7 +189,7 @@ class Mailandsms extends Admin_Controller
 	public function index()
 	{
 		// Ambil informasi pengguna yang login dari session
-		$user_id = $this->session->userdata('loginuserID'); // Pastikan nama session ini sesuai dengan yang digunakan
+		$userID = $this->session->userdata('loginuserID'); // Pastikan nama session ini sesuai dengan yang digunakan
 		$usertypeID = $this->session->userdata('usertypeID'); // Pastikan ini sesuai dengan nama session yang digunakan
 		
 		// Tambahkan model jika belum di-load
@@ -201,10 +201,10 @@ class Mailandsms extends Admin_Controller
 			$this->data['mailandsmss'] = $this->mailandsms_m->get_all_mailandsms();
 		} else {
 			// Jika pengguna adalah non-admin, tampilkan data yang relevan dengan user
-			$this->data['mailandsmss'] = $this->mailandsms_m->get_filtered_mailandsms_by_user($user_id, $usertypeID);
+			$this->data['mailandsmss'] = $this->mailandsms_m->get_filtered_mailandsms_by_user($userID, $usertypeID);
 		}
 
-		// Load view dengan data yang sesuai
+		// Load view dengan data yang sesu
 		$this->data['subview'] = 'mailandsms/index';
 		$this->load->view('_layout_main', $this->data);
 	}
@@ -588,8 +588,8 @@ class Mailandsms extends Admin_Controller
 				$rules = $this->rules_sms();
 				$this->form_validation->set_rules($rules);
 				if ($this->form_validation->run() == FALSE) {
-					$this->data['smsUserID'] = $this->input->post('sms_users');
-					$this->data['smsTemplateID'] = $this->input->post('sms_template');
+					$this->data['smsUserID'] = $this->input->post('email_users');
+					$this->data['smsTemplateID'] = $this->input->post('email_template');
 
 					$this->data['allStudents'] = $this->studentrelation_m->get_order_by_student(array('srschoolyearID' => $this->input->post('sms_schoolyear'), 'srclassesID' => $this->input->post('sms_class')));
 
@@ -1176,6 +1176,7 @@ class Mailandsms extends Admin_Controller
 			$this->load->view('_layout_main', $this->data);
 		}
 	}
+	
 
 	private function userConfigEmail($message, $user, $usertypeID, $schoolyearID = 1)
 	{

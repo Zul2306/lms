@@ -8,198 +8,196 @@
         </ol>
     </div><!-- /.box-header -->
     <!-- form start -->
-    <div class="box-body">
-        <div class="row">
-            <div class="col-sm-12">
 
-                <div class="nav-tabs-custom">
-                    <ul class="nav nav-tabs">
-                        <li class="<?php if ($email == 1) echo 'active'; ?>"><a data-toggle="tab" href="#email" aria-expanded="true"><?= $this->lang->line('mailandsms_email') ?></a></li>
-                    </ul>
+    <div class="row">
+        <div class="col-sm-12">
 
-                    <div class="tab-content">
-                        <div id="email" class="tab-pane <?php if ($email == 1) echo 'active'; ?> ">
-                            <br>
-                            <div class="row">
-                                <div class="col-sm-10">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="<?php if ($email == 1) echo 'active'; ?>"><a data-toggle="tab" href="#email" aria-expanded="true"><?= $this->lang->line('mailandsms_email') ?></a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="email" class="tab-pane <?php if ($email == 1) echo 'active'; ?> ">
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-10">
 
 
-                                    <form class="form-horizontal" role="form" method="post">
-                                        <?php echo form_hidden('type', 'email'); ?>
+                                <form class="form-horizontal" role="form" method="post">
+                                    <?php echo form_hidden('type', 'email'); ?>
 
-                                        <?php
-                                        if (form_error('email_usertypeID'))
-                                            echo "<div class='form-group has-error' >";
-                                        else
-                                            echo "<div class='form-group' >";
-                                        ?>
-                                        <label for="email_usertypeID" class="col-sm-2 control-label">
-                                            <?= $this->lang->line("mailandsms_usertype") ?> <span class="text-red">*</span>
-                                        </label>
-                                        <div class="col-sm-6">
-                                            <?php
-                                            $usertypeArray = array(
-                                                'select' => $this->lang->line('mailandsms_all_role')
-                                            );
-
-                                            if (customCompute($usertypes)) {
-                                                foreach ($usertypes as $key => $usertype) {
-                                                    $usertypeArray[$usertype->usertypeID] = $usertype->usertype;
-                                                }
-                                            }
-
-                                            echo form_dropdown("email_usertypeID", $usertypeArray, set_value("email_usertypeID"), "id='email_usertypeID' class='form-control select2'");
-                                            ?>
-                                        </div>
-                                        <span class="col-sm-4 control-label">
-                                            <?php echo form_error('email_usertypeID'); ?>
-                                        </span>
-                                </div>
-
-                                <?php
-                                if (form_error('email_schoolyear'))
-                                    echo "<div id='divemail_schoolyear' class='form-group has-error' >";
-                                else
-                                    echo "<div id='divemail_schoolyear' class='form-group' >";
-                                ?>
-                                <label for="email_schoolyear" class="col-sm-2 control-label">
-                                    <?= $this->lang->line("mailandsms_schoolyear") ?>
-                                </label>
-                                <div class="col-sm-6">
                                     <?php
-                                    $schoolyearArray = array(
-                                        'select' => $this->lang->line('mailandsms_all_schoolyear')
-                                    );
+                                    if (form_error('email_usertypeID'))
+                                        echo "<div class='form-group has-error' >";
+                                    else
+                                        echo "<div class='form-group' >";
+                                    ?>
+                                    <label for="email_usertypeID" class="col-sm-2 control-label">
+                                        <?= $this->lang->line("mailandsms_usertype") ?> <span class="text-red">*</span>
+                                    </label>
+                                    <div class="col-sm-6">
+                                        <?php
+                                        $usertypeArray = array(
+                                            'select' => $this->lang->line('mailandsms_all_role')
+                                        );
 
-                                    if (customCompute($schoolyears)) {
-                                        $setschoolyear = '';
-                                        foreach ($schoolyears as $key => $schoolyear) {
-                                            if ($schoolyear->schoolyearID == $siteinfos->school_year) {
-                                                $schoolyearArray[$schoolyear->schoolyearID] = $schoolyear->schoolyear . ' - (' . $this->lang->line('mailandsms_default') . ')';
-                                                $setschoolyear = $schoolyear->schoolyearID;
-                                            } else {
-                                                $schoolyearArray[$schoolyear->schoolyearID] = $schoolyear->schoolyear;
+                                        if (customCompute($usertypes)) {
+                                            foreach ($usertypes as $key => $usertype) {
+                                                $usertypeArray[$usertype->usertypeID] = $usertype->usertype;
                                             }
                                         }
-                                    }
 
-                                    echo form_dropdown("email_schoolyear", $schoolyearArray, set_value("email_schoolyear", $setschoolyear), "id='email_schoolyear' class='form-control select2'");
-                                    ?>
-                                </div>
-                                <span class="col-sm-4 control-label">
-                                    <?php echo form_error('email_schoolyear'); ?>
-                                </span>
+                                        echo form_dropdown("email_usertypeID", $usertypeArray, set_value("email_usertypeID"), "id='email_usertypeID' class='form-control select2'");
+                                        ?>
+                                    </div>
+                                    <span class="col-sm-4 control-label">
+                                        <?php echo form_error('email_usertypeID'); ?>
+                                    </span>
                             </div>
 
                             <?php
-                            if (form_error('email_class'))
-                                echo "<div id='divemail_class' class='form-group has-error' >";
+                            if (form_error('email_schoolyear'))
+                                echo "<div id='divemail_schoolyear' class='form-group has-error' >";
                             else
-                                echo "<div id='divemail_class' class='form-group' >";
+                                echo "<div id='divemail_schoolyear' class='form-group' >";
                             ?>
-                            <label for="email_class" class="col-sm-2 control-label">
-                                <?= $this->lang->line("mailandsms_class") ?>
+                            <label for="email_schoolyear" class="col-sm-2 control-label">
+                                <?= $this->lang->line("mailandsms_schoolyear") ?>
                             </label>
                             <div class="col-sm-6">
                                 <?php
-                                $classArray = array(
-                                    'select' => $this->lang->line('mailandsms_all_class')
+                                $schoolyearArray = array(
+                                    'select' => $this->lang->line('mailandsms_all_schoolyear')
                                 );
 
-                                if (customCompute($allClasses)) {
-                                    foreach ($allClasses as $allClass) {
-                                        $classArray[$allClass->classesID] = $allClass->classes;
+                                if (customCompute($schoolyears)) {
+                                    $setschoolyear = '';
+                                    foreach ($schoolyears as $key => $schoolyear) {
+                                        if ($schoolyear->schoolyearID == $siteinfos->school_year) {
+                                            $schoolyearArray[$schoolyear->schoolyearID] = $schoolyear->schoolyear . ' - (' . $this->lang->line('mailandsms_default') . ')';
+                                            $setschoolyear = $schoolyear->schoolyearID;
+                                        } else {
+                                            $schoolyearArray[$schoolyear->schoolyearID] = $schoolyear->schoolyear;
+                                        }
                                     }
                                 }
 
-                                echo form_dropdown("email_class", $classArray, set_value("email_class"), "id='email_class' class='form-control select2'");
+                                echo form_dropdown("email_schoolyear", $schoolyearArray, set_value("email_schoolyear", $setschoolyear), "id='email_schoolyear' class='form-control select2'");
                                 ?>
                             </div>
                             <span class="col-sm-4 control-label">
-                                <?php echo form_error('email_class'); ?>
+                                <?php echo form_error('email_schoolyear'); ?>
                             </span>
                         </div>
 
                         <?php
-                        if (form_error('email_section'))
-                            echo "<div id='divemail_section' class='form-group has-error' >";
+                        if (form_error('email_class'))
+                            echo "<div id='divemail_class' class='form-group has-error' >";
                         else
-                            echo "<div id='divemail_section' class='form-group' >";
+                            echo "<div id='divemail_class' class='form-group' >";
                         ?>
-                        <label for="sectionID" class="col-sm-2 control-label">
-                            <?= $this->lang->line("mailandsms_section") ?>
+                        <label for="email_class" class="col-sm-2 control-label">
+                            <?= $this->lang->line("mailandsms_class") ?>
                         </label>
                         <div class="col-sm-6">
                             <?php
-                            $arraysection['select'] = $this->lang->line("mailandsms_all_section");
-                            if (customCompute($sections)) {
-                                foreach ($sections as $section) {
-                                    $arraysection[$section->sectionID] = $section->section;
+                            $classArray = array(
+                                'select' => $this->lang->line('mailandsms_all_class')
+                            );
+
+                            if (customCompute($allClasses)) {
+                                foreach ($allClasses as $allClass) {
+                                    $classArray[$allClass->classesID] = $allClass->classes;
                                 }
                             }
-                            echo form_dropdown("email_section", $arraysection, set_value("email_section"), "id='email_section' class='form-control select2'");
+
+                            echo form_dropdown("email_class", $classArray, set_value("email_class"), "id='email_class' class='form-control select2'");
                             ?>
                         </div>
                         <span class="col-sm-4 control-label">
-                            <?php echo form_error('email_section'); ?>
+                            <?php echo form_error('email_class'); ?>
                         </span>
                     </div>
 
                     <?php
-                    if (form_error('email_users'))
-                        echo "<div class='form-group has-error' >";
+                    if (form_error('email_section'))
+                        echo "<div id='divemail_section' class='form-group has-error' >";
                     else
-                        echo "<div class='form-group' >";
+                        echo "<div id='divemail_section' class='form-group' >";
                     ?>
-                    <label for="email_users" class="col-sm-2 control-label">
-                        <?= $this->lang->line("mailandsms_users") ?>
+                    <label for="sectionID" class="col-sm-2 control-label">
+                        <?= $this->lang->line("mailandsms_section") ?>
                     </label>
                     <div class="col-sm-6">
                         <?php
-                        $userArray = array(
-                            'select' => $this->lang->line('mailandsms_all_users')
-                        );
-
-                        if (customCompute($allStudents)) {
-                            foreach ($allStudents as $allStudent) {
-                                $userArray[$allStudent->studentID] = $allStudent->name;
+                        $arraysection['select'] = $this->lang->line("mailandsms_all_section");
+                        if (customCompute($sections)) {
+                            foreach ($sections as $section) {
+                                $arraysection[$section->sectionID] = $section->section;
                             }
                         }
-
-                        echo form_dropdown("email_users", $userArray, set_value("email_users"), "id='email_users' class='form-control select2'");
+                        echo form_dropdown("email_section", $arraysection, set_value("email_section"), "id='email_section' class='form-control select2'");
                         ?>
                     </div>
                     <span class="col-sm-4 control-label">
-                        <?php echo form_error('email_users'); ?>
+                        <?php echo form_error('email_section'); ?>
                     </span>
                 </div>
 
-
                 <?php
-                if (form_error('email_template'))
+                if (form_error('email_users'))
                     echo "<div class='form-group has-error' >";
                 else
                     echo "<div class='form-group' >";
                 ?>
-                <label for="email_template" class="col-sm-2 control-label">
-                    <?= $this->lang->line("mailandsms_template") ?>
+                <label for="email_users" class="col-sm-2 control-label">
+                    <?= $this->lang->line("mailandsms_users") ?>
                 </label>
                 <div class="col-sm-6">
-
                     <?php
-                    $array = array(
-                        'select' => $this->lang->line('mailandsms_select_tem'),
+                    $userArray = array(
+                        'select' => $this->lang->line('mailandsms_all_users')
                     );
 
-                    echo form_dropdown("email_template", $array, set_value("email_template"), "id='email_template' class='form-control select2'");
+                    if (customCompute($allStudents)) {
+                        foreach ($allStudents as $allStudent) {
+                            $userArray[$allStudent->studentID] = $allStudent->name;
+                        }
+                    }
+
+                    echo form_dropdown("email_users", $userArray, set_value("email_users"), "id='email_users' class='form-control select2'");
                     ?>
                 </div>
                 <span class="col-sm-4 control-label">
-                    <?php echo form_error('email_template'); ?>
+                    <?php echo form_error('email_users'); ?>
                 </span>
             </div>
 
-        
+
+            <?php
+            if (form_error('email_template'))
+                echo "<div class='form-group has-error' >";
+            else
+                echo "<div class='form-group' >";
+            ?>
+            <label for="email_template" class="col-sm-2 control-label">
+                <?= $this->lang->line("mailandsms_template") ?>
+            </label>
+            <div class="col-sm-6">
+
+                <?php
+                $array = array(
+                    'select' => $this->lang->line('mailandsms_select_tem'),
+                );
+
+                echo form_dropdown("email_template", $array, set_value("email_template"), "id='email_template' class='form-control select2'");
+                ?>
+            </div>
+            <span class="col-sm-4 control-label">
+                <?php echo form_error('email_template'); ?>
+            </span>
+        </div>
 
         <?php
         if (form_error('email_type'))
@@ -211,7 +209,7 @@
             <?= $this->lang->line("mailandsms_type") ?> <span class="text-red">*</span>
         </label>
         <div class="col-sm-6">
-        <input type="text" class="form-control" id="email_type" name="email_type" value="<?= set_value('email_type') ?>">
+            <input type="text" class="form-control" id="email_type" name="email_type" value="<?= set_value('email_type') ?>">
         </div>
         <span class="col-sm-4 control-label">
             <?php echo form_error('email_type'); ?>
@@ -219,20 +217,45 @@
     </div>
 
     <?php
-    if (form_error('email_subject'))
-        echo "<div class='form-group has-error' id='subject_section' >";
+    if (form_error('email_sender'))
+        echo "<div class='form-group has-error' >";
     else
-        echo "<div class='form-group' id='subject_section' >";
+        echo "<div class='form-group' >";
     ?>
-    <label for="email_subject" class="col-sm-2 control-label">
-        <?= $this->lang->line("mailandsms_subject") ?> <span class="text-red">*</span>
+    <label for="email_sender" class="col-sm-2 control-label">
+        <?= $this->lang->line("mailandsms_sender") ?>
+        <span>Sender</span>
     </label>
     <div class="col-sm-6">
-        <input type="text" class="form-control" id="email_subject" name="email_subject" value="<?= set_value('email_subject') ?>">
+        <input type="text" class="form-control" id="email_sender" name="email_sender" value="<?= set_value('email_sender', $this->session->userdata('name')) ?>"
+            <?php
+            $name = $this->session->userdata("name");
+            if (strlen($name) > 18) {
+                $name = substr($name, 0, 18);
+            }
+            echo 'value="' . htmlspecialchars($name) . '"';
+            ?>readonly>
     </div>
     <span class="col-sm-4 control-label">
-        <?php echo form_error('email_subject'); ?>
+        <?php echo form_error('email_sender'); ?>
     </span>
+</div>
+
+<?php
+if (form_error('email_subject'))
+    echo "<div class='form-group has-error' id='subject_section' >";
+else
+    echo "<div class='form-group' id='subject_section' >";
+?>
+<label for="email_subject" class="col-sm-2 control-label">
+    <?= $this->lang->line("mailandsms_subject") ?> <span class="text-red">*</span>
+</label>
+<div class="col-sm-6">
+    <input type="text" class="form-control" id="email_subject" name="email_subject" value="<?= set_value('email_subject') ?>">
+</div>
+<span class="col-sm-4 control-label">
+    <?php echo form_error('email_subject'); ?>
+</span>
 </div>
 
 <?php

@@ -42,23 +42,27 @@ class Mailandsms_m extends MY_Model
 	}
 
 
-
 	// Method untuk mendapatkan data yang difilter
-	public function get_filtered_mailandsms_by_user($user_id, $usertypeID)
-	{
-		// Pastikan untuk memeriksa data yang relevan
-		$this->db->select('*');
-		$this->db->from('mailandsms');
-		$this->db->where('senderID', $user_id);
-		$this->db->where('senderusertypeID', $usertypeID);
-		$query = $this->db->get();
-		return $query->result();
-	}
+	public function get_filtered_mailandsms_by_user($userID, $usertypeID)
+{
+    $this->db->select('mailandsms.*, usertype.usertype');
+    $this->db->from('mailandsms');
+    $this->db->join('usertype', 'usertype.usertypeID = mailandsms.usertypeID', 'LEFT');
+    $this->db->group_start();
+    $this->db->where('mailandsms.senderID', $userID);
+    $this->db->or_where('mailandsms.receiverID', $userID);
+    $this->db->group_end();
+    $this->db->order_by('mailandsms.mailandsmsID', 'DESC');
+    $query = $this->db->get();
 
+    if (!$query) {
+        $error = $this->db->error();
+        log_message('error', 'Query Error: ' . print_r($error, true));
+        return [];
+    }
 
-
-
-
+    return $query->result_array(); // Ensure this returns an array
+}
 
 	function get_single_mailandsms($array = NULL)
 	{
