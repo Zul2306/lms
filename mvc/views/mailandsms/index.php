@@ -28,7 +28,7 @@
                                 <th class="col-lg-1"><?= $this->lang->line('mailandsms_usertype') ?></th>
                                 <th class="col-lg-3"><?= $this->lang->line('mailandsms_users') ?></th>
                                 <th class="col-lg-1"><?= $this->lang->line('mailandsms_type') ?></th>
-                                <th class="col-lg-1"><?= $this->lang->line('mailandsms_sender') ?></th>
+                                <th class="col-lg-1">Sender</th>
                                 <th class="col-lg-2"><?= $this->lang->line('mailandsms_dateandtime') ?></th>
                                 <th class="col-lg-3"><?= $this->lang->line('mailandsms_message') ?></th>
                                 <?php if (permissionChecker('mailandsms_view')) { ?>
@@ -47,7 +47,7 @@
                                         </td>
                                         <td data-title="<?= $this->lang->line('mailandsms_usertype') ?>">
                                             <?php
-                                            $usertypeName = "Unknown"; 
+                                            $usertypeName = "Unknown";
                                             // Mapping usertypeID to usertype name
                                             switch ($mailandsms->usertypeID) {
                                                 case 1:
@@ -61,18 +61,6 @@
                                                     break;
                                                 case 4:
                                                     $usertypeName = "Parents";
-                                                    break;
-                                                case 5:
-                                                    $usertypeName = "Accountant";
-                                                    break;
-                                                case 6:
-                                                    $usertypeName = "Librarian";
-                                                    break;
-                                                case 7:
-                                                    $usertypeName = "Receptionist";
-                                                    break;
-                                                case 8:
-                                                    $usertypeName = "Moderator";
                                                     break;
                                                 default:
                                                     $usertypeName = $this->lang->line('mailandsms_guest_user');
@@ -95,26 +83,28 @@
                                         </td>
                                         <td data-title="<?= $this->lang->line('mailandsms_sender') ?>">
                                             <?php
-                                            
-                                            $senderType = $mailandsms->senderusertypeID; // Retrieve sender usertype ID
-                                            $senderName = $mailandsms->senderID; // Retrieve sender ID
+                                            // Mengambil nama pengirim sesuai usertype
+                                            $senderType = $mailandsms->senderusertypeID;
+                                            $senderName = $mailandsms->senderID;
 
-                                            if ($senderType == 1) { // Example for admin
+                                            if ($senderType == 1) {
                                                 $sender = $this->systemadmin_m->get_systemadmin($senderName);
-                                            } elseif ($senderType == 2) { // Example for teacher
+                                            } elseif ($senderType == 2) {
                                                 $sender = $this->teacher_m->general_get_Teacher($senderName);
-                                            } elseif ($senderType == 3) { // Example for teacher
+                                            } elseif ($senderType == 3) {
                                                 $sender = $this->student_m->general_get_Student($senderName);
-                                            } elseif ($senderType == 4) { // Example for teacher
+                                            } elseif ($senderType == 4) {
                                                 $sender = $this->parents_m->general_get_Parents($senderName);
                                             } else {
                                                 $sender = "Unknown";
                                             }
+
                                             echo isset($sender->name) ? $sender->name : $sender;
                                             ?>
                                         </td>
                                         <td data-title="<?= $this->lang->line('mailandsms_dateandtime') ?>">
                                             <?php echo date("d M Y h:i:s a", strtotime($mailandsms->create_date)); ?>
+                                        </td>
                                         <td data-title="<?= $this->lang->line('mailandsms_message') ?>">
                                             <?php echo substr(strip_tags($mailandsms->message), 0, 36) . ".."; ?>
                                         </td>
@@ -128,6 +118,7 @@
                                 }
                             } ?>
                         </tbody>
+
                     </table>
                 </div>
             </div> <!-- col-sm-12 -->

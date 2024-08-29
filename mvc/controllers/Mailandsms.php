@@ -188,26 +188,38 @@ class Mailandsms extends Admin_Controller
 
 	public function index()
 	{
-		// Ambil informasi pengguna yang login dari session
-		$userID = $this->session->userdata('loginuserID'); // Pastikan nama session ini sesuai dengan yang digunakan
-		$usertypeID = $this->session->userdata('usertypeID'); // Pastikan ini sesuai dengan nama session yang digunakan
-		
-		// Tambahkan model jika belum di-load
-		$this->load->model('mailandsms_m');
+		$loginUserName = $this->session->userdata('name');
+		$loginUserID = $this->session->userdata('loginuserID');
+		$usertypeID = $this->session->userdata('usertypeID');
 
-		// Filter data berdasarkan role pengguna
-		if ($usertypeID == '1') {
-			// Jika pengguna adalah admin, tampilkan semua data
-			$this->data['mailandsmss'] = $this->mailandsms_m->get_all_mailandsms();
+		if ($usertypeID == 4) { // Jika user yang login adalah parent
+			// Ambil daftar nama student yang terkait dengan parent
+			$this->load->model('student_m');
+			$student_names = $this->student_m->get_student_names_by_parent($loginUserID);
+
+			if (!empty($student_names)) {
+				// Ambil data dari mailandsms di mana users adalah salah satu nama student
+				$this->data['mailandsmss'] = $this->mailandsms_m->get_mailandsms_with_student_names($student_names);
+			} else {
+				$this->data['mailandsmss'] = [];
+			}
+		} elseif ($usertypeID == 2) {
+			$this->data['mailandsmss'] = $this->mailandsms_m->get_mailandsms_with_usertypeID([
+				'OR' => [
+					'mailandsms.users' => $loginUserName,
+					'mailandsms.senderID' => $loginUserID
+				]
+			]);
 		} else {
-			// Jika pengguna adalah non-admin, tampilkan data yang relevan dengan user
-			$this->data['mailandsmss'] = $this->mailandsms_m->get_filtered_mailandsms_by_user($userID, $usertypeID);
+			$this->data['mailandsmss'] = $this->mailandsms_m->get_all_mailandsms([
+				'mailandsms.users' => $loginUserName
+			]);
 		}
 
-		// Load view dengan data yang sesu
-		$this->data['subview'] = 'mailandsms/index';
+		$this->data["subview"] = "mailandsms/index";
 		$this->load->view('_layout_main', $this->data);
 	}
+
 
 
 
@@ -1176,7 +1188,7 @@ class Mailandsms extends Admin_Controller
 			$this->load->view('_layout_main', $this->data);
 		}
 	}
-	
+
 
 	private function userConfigEmail($message, $user, $usertypeID, $schoolyearID = 1)
 	{

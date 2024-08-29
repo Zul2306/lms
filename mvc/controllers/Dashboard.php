@@ -701,13 +701,20 @@
         {
             $version = 'none';
             if ( $this->session->userdata('usertypeID') == 1 && $this->session->userdata('loginuserID') == 1 ) {
-                if ( customCompute($postDatas = @$this->_postData()) ) {
+                if (customCompute($postDatas = @$this->_postData())) {
                     $versionChecking = $this->_versionChecking($postDatas);
-                    if ( $versionChecking->status ) {
+                    
+                    if (is_object($versionChecking) && isset($versionChecking->status) && $versionChecking->status) {
                         $version = $versionChecking->version;
+                    } else {
+                        // Tangani jika status tidak ada atau false
+                        $version = 'unknown';
+                        // Anda bisa menambahkan log atau handling error di sini
                     }
                 }
-            }
+                
+                }
+            
 
             return $version;
         }

@@ -18,16 +18,45 @@ class Mailandsms_m extends MY_Model
 		$query = parent::get($array, $signal);
 		return $query;
 	}
+	// public function get_mailandsms_for_parent($parentUserID)
+	// {
+	// 	// Pertama, ambil semua student_ids yang terkait dengan parent_user_id
+	// 	$this->db->select('studentID');
+	// 	$this->db->from('student');
+	// 	$this->db->where('parentID', $parentUserID);
+	// 	$query = $this->db->get();
 
-	function get_mailandsms_with_usertypeID()
+	// 	$studentIDs = array_column($query->result_array(), 'studentID');
+
+	// 	if (empty($studentIDs)) {
+	// 		return []; // Jika tidak ada student terkait, kembalikan array kosong
+	// 	}
+
+	// 	// Sekarang, ambil data dari mailandsms yang sesuai dengan student_ids
+	// 	$this->db->where_in('mailandsms.users', $studentIDs);
+	// 	$this->db->or_where_in('mailandsms.', $studentIDs);
+	// 	$query = $this->db->get('mailandsms');
+	// 	// Debugging query result
+	// 	echo $this->db->last_query(); // Menampilkan query yang terakhir dijalankan
+	// 	echo '<pre>';
+	// 	print_r($query->result());
+	// 	echo '</pre>';
+
+	// 	return $query->result();
+	// }
+	public function get_mailandsms_with_student_names($student_names)
 	{
-		$this->db->select('mailandsms.*, usertype.usertypeID, usertype.usertype');
+		$this->db->select('mailandsms.*');
 		$this->db->from('mailandsms');
-		$this->db->join('usertype', 'usertype.usertypeID = mailandsms.usertypeID', 'LEFT');
-		$this->db->order_by("mailandsmsID", 'DESC');
+		$this->db->where_in('mailandsms.users', $student_names);
+		$this->db->order_by('mailandsmsID', 'DESC');
 		$query = $this->db->get();
+
 		return $query->result();
 	}
+
+
+
 
 	function get_order_by_mailandsms($array = NULL)
 	{
@@ -43,26 +72,36 @@ class Mailandsms_m extends MY_Model
 
 
 	// Method untuk mendapatkan data yang difilter
-	public function get_filtered_mailandsms_by_user($userID, $usertypeID)
-{
-    $this->db->select('mailandsms.*, usertype.usertype');
-    $this->db->from('mailandsms');
-    $this->db->join('usertype', 'usertype.usertypeID = mailandsms.usertypeID', 'LEFT');
-    $this->db->group_start();
-    $this->db->where('mailandsms.senderID', $userID);
-    $this->db->or_where('mailandsms.receiverID', $userID);
-    $this->db->group_end();
-    $this->db->order_by('mailandsms.mailandsmsID', 'DESC');
-    $query = $this->db->get();
+	public function get_mailandsms_with_usertypeID($conditions = [])
+	{
+		$this->db->select('mailandsms.*, usertype.usertypeID, usertype.usertype');
+		$this->db->from('mailandsms');
+		$this->db->join('usertype', 'usertype.usertypeID = mailandsms.usertypeID', 'LEFT');
 
-    if (!$query) {
-        $error = $this->db->error();
-        log_message('error', 'Query Error: ' . print_r($error, true));
-        return [];
-    }
+		if (!empty($conditions)) {
+			if (isset($conditions['OR'])) {
+				$this->db->group_start();
+				foreach ($conditions['OR'] as $key => $value) {
+					$this->db->or_where($key, $value);
+				}
+				$this->db->group_end();
+			} else {
+				$this->db->where($conditions);
+			}
+		}
 
-    return $query->result_array(); // Ensure this returns an array
-}
+		$this->db->order_by("mailandsmsID", 'DESC');
+		$query = $this->db->get();
+
+		// Debugging query result
+		// echo $this->db->last_query(); // Menampilkan query yang terakhir dijalankan
+		// echo '<pre>';
+		// print_r($query->result());
+		// echo '</pre>';
+		return $query->result();
+	}
+
+
 
 	function get_single_mailandsms($array = NULL)
 	{
