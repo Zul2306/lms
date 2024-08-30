@@ -218,11 +218,11 @@ class Mailandsms extends Admin_Controller
 			$this->db->group_end();
 			$this->data['mailandsmss'] = $this->db->get('mailandsms')->result();
 		} else {
-			// Untuk usertype lain (misalnya admin atau student)
-			$this->data['mailandsmss'] = $this->db->get_where('mailandsms', [
-				'mailandsms.users' => $loginUserName
-			])->result();
+			$this->data['mailandsmss'] = $this->mailandsms_m->get_all_mailandsms();
 		}
+		
+		
+	
 
 		$this->data["subview"] = "mailandsms/index";
 		$this->load->view('_layout_main', $this->data);

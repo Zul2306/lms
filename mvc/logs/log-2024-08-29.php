@@ -829,3 +829,677 @@ AND `conversation_message_info`.`draft` = 0
 GROUP BY `conversation_message_info`.`id`
 ORDER BY `conversation_message_info`.`id` DESC
 ERROR - 2024-08-29 19:34:35 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:36:24 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:24 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:24 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:24 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:24 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:24 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:24 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:24 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:24 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:30 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '2'
+AND `conversation_user`.`usertypeID` = '2'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:36:30 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:36:32 --> Could not find the language line "mailandsms_select_tem"
+ERROR - 2024-08-29 19:36:32 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:38 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '2'
+AND `conversation_user`.`usertypeID` = '2'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:36:38 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:36:55 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:55 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:55 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:55 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:55 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:55 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:55 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:55 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:55 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:36:55 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:37:01 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '2'
+AND `conversation_user`.`usertypeID` = '2'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:37:01 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:37:25 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:37:25 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:37:25 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:37:31 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '4'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:37:31 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:37:45 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '4'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:37:45 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:38:09 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '4'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:38:09 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:38:38 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:38:38 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:38:50 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:38:50 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:39:27 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:39:27 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:39:33 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2211
+ERROR - 2024-08-29 19:39:33 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2212
+ERROR - 2024-08-29 19:39:33 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2213
+ERROR - 2024-08-29 19:39:33 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2214
+ERROR - 2024-08-29 19:39:33 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2292
+ERROR - 2024-08-29 19:39:33 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2293
+ERROR - 2024-08-29 19:39:33 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2294
+ERROR - 2024-08-29 19:39:33 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2295
+ERROR - 2024-08-29 19:39:33 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2503
+ERROR - 2024-08-29 19:39:33 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2504
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2505
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2506
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3259
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3259
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3260
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3260
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3260
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3261
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3262
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3263
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3264
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3264
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3265
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3265
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3266
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3266
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3266
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3266
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 4555
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5234
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5234
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5235
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5236
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5236
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5237
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5238
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5238
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5238
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5239
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5521
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9984
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9984
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9985
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9985
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9985
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9986
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9987
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9988
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9988
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9989
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9989
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9989
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9989
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18741
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18743
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18749
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18753
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18757
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18787
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18787
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18788
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18789
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18789
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18790
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18791
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18791
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18791
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18792
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 22214
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 22215
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 22215
+ERROR - 2024-08-29 19:39:34 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 22215
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 69
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 69
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 70
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 70
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 70
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 74
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 74
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 75
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 75
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 75
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 75
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 76
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 77
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 90
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 90
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 91
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 91
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 91
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 96
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 96
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 97
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 97
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 97
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 97
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 98
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 99
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 115
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 115
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 116
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 116
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 116
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 119
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 119
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 120
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 120
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 120
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 120
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 123
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 124
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 138
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 139
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 139
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 139
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 142
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 143
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 143
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 146
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 147
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 147
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 147
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 150
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 151
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 151
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 151
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 151
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 154
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 155
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 155
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 155
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 155
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 158
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 159
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 159
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 159
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 159
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 159
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 512
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 512
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 512
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 512
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 514
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 516
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 516
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 516
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 707
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 709
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 709
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 851
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 853
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 853
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 867
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 869
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 870
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 872
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 873
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 873
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 875
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 945
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 947
+ERROR - 2024-08-29 19:39:35 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 947
+ERROR - 2024-08-29 19:39:36 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3095
+ERROR - 2024-08-29 19:39:36 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3114
+ERROR - 2024-08-29 19:39:36 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3118
+ERROR - 2024-08-29 19:39:36 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3136
+ERROR - 2024-08-29 19:39:36 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3142
+ERROR - 2024-08-29 19:39:36 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3142
+ERROR - 2024-08-29 19:39:36 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3142
+ERROR - 2024-08-29 19:39:36 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3142
+ERROR - 2024-08-29 19:39:36 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 4674
+ERROR - 2024-08-29 19:39:36 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 5584
+ERROR - 2024-08-29 19:39:36 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Image\ImageProcessor.php 547
+ERROR - 2024-08-29 19:39:36 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Image\ImageProcessor.php 1055
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23114
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23114
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23114
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23114
+ERROR - 2024-08-29 19:39:41 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23114
+ERROR - 2024-08-29 19:39:41 --> Severity: error --> Exception: Data has already been sent to output (C:\laragon\www\lms\main\core\Exceptions.php at line 271), unable to output PDF file C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9294
+ERROR - 2024-08-29 19:39:42 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\laragon\www\lms\main\core\Exceptions.php:271) C:\laragon\www\lms\main\core\Common.php 570
+ERROR - 2024-08-29 19:39:42 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:39:42 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:40:41 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:40:41 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:40:46 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:40:46 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2211
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2212
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2213
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2214
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2292
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2293
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2294
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2295
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2503
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2504
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2505
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 2506
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3259
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3259
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3260
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3260
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3260
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3261
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3262
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3263
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3264
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3264
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3265
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3265
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3266
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3266
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3266
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 3266
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 4555
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5234
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5234
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5235
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5236
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5236
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5237
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5238
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5238
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5238
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5239
+ERROR - 2024-08-29 19:43:40 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 5521
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9984
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9984
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9985
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9985
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9985
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9986
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9987
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9988
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9988
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9989
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9989
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9989
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9989
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18741
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18743
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18749
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18753
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18757
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18787
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18787
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18788
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18789
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18789
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18790
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18791
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18791
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18791
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 18792
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 22214
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 22215
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 22215
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 22215
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 69
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 69
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 70
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 70
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 70
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 74
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 74
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 75
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 75
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 75
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 75
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 76
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 77
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 90
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 90
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 91
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 91
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 91
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 96
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 96
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 97
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 97
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 97
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 97
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 98
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 99
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 115
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 115
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 116
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 116
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 116
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 119
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 119
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 120
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 120
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 120
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 120
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 123
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 124
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 138
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 139
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 139
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 139
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 142
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 143
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 143
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 146
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 147
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 147
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 147
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 150
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 151
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 151
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 151
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 151
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 154
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 155
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 155
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 155
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 155
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 158
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 159
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 159
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 159
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 159
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Color\ColorConverter.php 159
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 512
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 512
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 512
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 512
+ERROR - 2024-08-29 19:43:41 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 514
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 516
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 516
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 516
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 707
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 709
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 709
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 851
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 853
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 853
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 867
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 869
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 870
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 872
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 873
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 873
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 875
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 945
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 947
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Gradient.php 947
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3095
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3114
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3118
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3136
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3142
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3142
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3142
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 3142
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 4674
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Otl.php 5584
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Image\ImageProcessor.php 547
+ERROR - 2024-08-29 19:43:42 --> Severity: 8192 --> Array and string offset access syntax with curly braces is deprecated C:\laragon\www\lms\mvc\libraries\mpdf\src\Image\ImageProcessor.php 1055
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23071
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23072
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23073
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type null C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23074
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23114
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23114
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23114
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23114
+ERROR - 2024-08-29 19:43:43 --> Severity: Notice --> Trying to access array offset on value of type int C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 23114
+ERROR - 2024-08-29 19:43:44 --> Severity: error --> Exception: Data has already been sent to output (C:\laragon\www\lms\main\core\Exceptions.php at line 271), unable to output PDF file C:\laragon\www\lms\mvc\libraries\mpdf\src\Mpdf.php 9294
+ERROR - 2024-08-29 19:43:44 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\laragon\www\lms\main\core\Exceptions.php:271) C:\laragon\www\lms\main\core\Common.php 570
+ERROR - 2024-08-29 19:44:18 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:44:18 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:46:27 --> Severity: error --> Exception: syntax error, unexpected '}' C:\laragon\www\lms\mvc\controllers\Mailandsms.php 222
+ERROR - 2024-08-29 19:52:02 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:52:02 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:52:02 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:52:02 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:52:02 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:52:02 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:52:02 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:52:02 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:52:02 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:52:02 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:52:02 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:52:09 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:52:09 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
