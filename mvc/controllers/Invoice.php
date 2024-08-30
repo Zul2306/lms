@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+ <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 use Omnipay\Omnipay;
 class Invoice extends Admin_Controller {
@@ -257,7 +257,7 @@ class Invoice extends Admin_Controller {
         $usertypeID = $this->session->userdata("usertypeID");
         $schoolyearID = $this->session->userdata('defaultschoolyearID');
         $this->data['feetypes'] = pluck($this->feetypes_m->get_feetypes(), 'feetypes', 'feetypesID');
-
+ 
         if($usertypeID == 3) {
             $id = htmlentities(escapeString($this->uri->segment(3)));
             if((int)$id) {

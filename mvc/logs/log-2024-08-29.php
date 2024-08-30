@@ -1503,3 +1503,405 @@ AND `conversation_message_info`.`draft` = 0
 GROUP BY `conversation_message_info`.`id`
 ORDER BY `conversation_message_info`.`id` DESC
 ERROR - 2024-08-29 19:52:09 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:54:46 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:54:46 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:55:16 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:16 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:16 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:16 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:16 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:16 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:16 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:16 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:16 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:16 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:16 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:22 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:55:22 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:55:27 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:27 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:27 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:27 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:27 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:27 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:27 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:27 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:27 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:27 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:27 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 19:55:32 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:55:32 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:55:49 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:55:49 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 19:56:18 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 19:56:18 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 20:17:25 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 20:17:25 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 20:19:13 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '2'
+AND `conversation_user`.`usertypeID` = '2'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 20:19:13 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 20:19:50 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 20:19:50 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 20:19:50 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 20:19:50 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 20:19:50 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 20:19:50 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 20:19:50 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 20:19:50 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 20:19:50 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 20:19:50 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 20:19:56 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '2'
+AND `conversation_user`.`usertypeID` = '2'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 20:19:56 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 20:20:16 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '2'
+AND `conversation_user`.`usertypeID` = '2'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 20:20:16 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 20:23:47 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 20:23:47 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 20:26:08 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 20:26:08 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 20:26:26 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 20:26:26 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 20:30:42 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 20:30:42 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 20:40:19 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 20:40:19 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 20:45:05 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 20:45:05 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 20:45:18 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 20:45:18 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 20:45:28 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 20:45:28 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 21:19:20 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 21:19:20 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 21:19:20 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 21:19:20 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 21:19:20 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 21:19:20 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 21:19:20 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 21:19:20 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 21:19:20 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 21:19:20 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 21:19:20 --> Could not find the language line "mailandsms_sender"
+ERROR - 2024-08-29 21:19:24 --> Could not find the language line "print"
+ERROR - 2024-08-29 21:19:24 --> Could not find the language line "mailandsms_from"
+ERROR - 2024-08-29 21:19:29 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 21:19:29 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 21:20:14 --> Could not find the language line "print"
+ERROR - 2024-08-29 21:20:14 --> Could not find the language line "mailandsms_from"
+ERROR - 2024-08-29 21:20:20 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 21:20:20 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 21:20:38 --> Could not find the language line "print"
+ERROR - 2024-08-29 21:20:38 --> Could not find the language line "mailandsms_from"
+ERROR - 2024-08-29 21:20:43 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 21:20:43 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 21:21:00 --> Could not find the language line "print"
+ERROR - 2024-08-29 21:21:00 --> Could not find the language line "mailandsms_from"
+ERROR - 2024-08-29 21:21:07 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 21:21:07 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 21:21:27 --> Could not find the language line "print"
+ERROR - 2024-08-29 21:21:27 --> Could not find the language line "mailandsms_from"
+ERROR - 2024-08-29 21:21:32 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 21:21:32 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 21:21:55 --> Could not find the language line "print"
+ERROR - 2024-08-29 21:21:55 --> Could not find the language line "mailandsms_from"
+ERROR - 2024-08-29 21:22:01 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 21:22:01 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 21:22:23 --> Could not find the language line "print"
+ERROR - 2024-08-29 21:22:23 --> Could not find the language line "mailandsms_from"
+ERROR - 2024-08-29 21:22:30 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 21:22:30 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 21:22:39 --> Could not find the language line "print"
+ERROR - 2024-08-29 21:22:39 --> Could not find the language line "mailandsms_from"
+ERROR - 2024-08-29 21:22:45 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 21:22:45 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 21:22:52 --> Could not find the language line "print"
+ERROR - 2024-08-29 21:22:52 --> Severity: Notice --> Undefined property: stdClass::$usertype C:\laragon\www\lms\mvc\views\mailandsms\view.php 45
+ERROR - 2024-08-29 21:22:52 --> Could not find the language line "mailandsms_from"
+ERROR - 2024-08-29 21:22:58 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 21:22:58 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 21:23:20 --> Could not find the language line "print"
+ERROR - 2024-08-29 21:23:20 --> Could not find the language line "mailandsms_from"
+ERROR - 2024-08-29 21:23:47 --> Could not find the language line "print"
+ERROR - 2024-08-29 21:23:47 --> Could not find the language line "mailandsms_from"
+ERROR - 2024-08-29 21:23:47 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 21:23:47 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
+ERROR - 2024-08-29 21:23:53 --> Query error: Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lms.conversation_user.is_sender' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by - Invalid query: SELECT DISTINCT *
+FROM `conversation_user`
+LEFT JOIN `conversation_message_info` ON `conversation_user`.`conversation_id`=`conversation_message_info`.`id`
+LEFT JOIN `conversation_msg` ON `conversation_user`.`conversation_id`=`conversation_msg`.`conversation_id`
+WHERE `conversation_user`.`user_id` = '1'
+AND `conversation_user`.`usertypeID` = '1'
+AND `conversation_user`.`trash` = 0
+AND `conversation_msg`.`start` = 1
+AND `conversation_message_info`.`draft` = 0
+GROUP BY `conversation_message_info`.`id`
+ORDER BY `conversation_message_info`.`id` DESC
+ERROR - 2024-08-29 21:23:53 --> Severity: error --> Exception: Call to a member function result() on bool C:\laragon\www\lms\mvc\models\Conversation_m.php 42
