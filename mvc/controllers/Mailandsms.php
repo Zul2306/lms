@@ -193,32 +193,41 @@ class Mailandsms extends Admin_Controller
 		$usertypeID = $this->session->userdata('usertypeID');
 
 		if ($usertypeID == 4) { // Jika user yang login adalah parent
-			// Ambil daftar nama student yang terkait dengan parent
 			$this->load->model('student_m');
 			$student_names = $this->student_m->get_student_names_by_parent($loginUserID);
 
 			if (!empty($student_names)) {
-				// Ambil data dari mailandsms di mana users adalah salah satu nama student
-				$this->data['mailandsmss'] = $this->mailandsms_m->get_mailandsms_with_student_names($student_names);
+				// Menggabungkan nama parent dengan nama-nama student
+				$names = array_merge([$loginUserName], $student_names);
 			} else {
-				$this->data['mailandsmss'] = [];
+				// Jika tidak ada nama student yang terkait, hanya menggunakan nama parent
+				$names = [$loginUserName];
 			}
-		} elseif ($usertypeID == 2) {
-			$this->data['mailandsmss'] = $this->mailandsms_m->get_mailandsms_with_usertypeID([
-				'OR' => [
-					'mailandsms.users' => $loginUserName,
-					'mailandsms.senderID' => $loginUserID
-				]
-			]);
+
+			// Mengambil data mailandsms di mana users adalah salah satu dari nama-nama tersebut atau senderID sesuai dengan ID user yang login
+			$this->db->group_start();
+			$this->db->where_in('mailandsms.users', $names);
+			// $this->db->or_where('mailandsms.senderID', $loginUserID);
+			$this->db->group_end();
+			$this->data['mailandsmss'] = $this->db->get('mailandsms')->result();
+		} elseif ($usertypeID == 2) { // Jika user yang login adalah teacher
+			// Mengambil data mailandsms di mana users adalah nama teacher atau senderID sesuai dengan ID teacher yang login
+			$this->db->group_start();
+			$this->db->where('mailandsms.users', $loginUserName);
+			$this->db->or_where('mailandsms.senderID', $loginUserID);
+			$this->db->group_end();
+			$this->data['mailandsmss'] = $this->db->get('mailandsms')->result();
 		} else {
-			$this->data['mailandsmss'] = $this->mailandsms_m->get_all_mailandsms([
+			// Untuk usertype lain (misalnya admin atau student)
+			$this->data['mailandsmss'] = $this->db->get_where('mailandsms', [
 				'mailandsms.users' => $loginUserName
-			]);
+			])->result();
 		}
 
 		$this->data["subview"] = "mailandsms/index";
 		$this->load->view('_layout_main', $this->data);
 	}
+
 
 
 
